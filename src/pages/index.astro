@@ -7,9 +7,12 @@ import IndexStats from '../components/IndexStats.astro';
 import IndexSkills from '../components/IndexSkills.astro';
 import IndexWork from '../components/IndexWork.astro';
 
-const {content, title, description, publishDate, author, heroImage, permalink} = Astro.props;
+const title="Johan Stenehall, Web developer"
+const description="A developer building things, currently for Volvo Car Mobility creating their web. At work he mostly codes Vue, React and Elm but also some Kotlin."
+const permalink="/"
+
 ---
-<html>
+<html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
   </head>

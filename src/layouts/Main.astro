@@ -7,7 +7,7 @@ const {title, description, publishDate, author, heroImage, permalink} = Astro.pr
 ---
 <html>
   <head>
-    <BaseHead title={title} description={description} permalink={permalink} />
+    <BaseHead title={title} description={description} permalink={`${Astro.site.origin}${permalink}`} />
   </head>
 
   <body >

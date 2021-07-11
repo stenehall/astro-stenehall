@@ -6,7 +6,10 @@ export interface Props {
 const { post } = Astro.props;
 ---
 <a 
-  style={`background-image: url(${post.heroImage})`}
+  style={`background-image: linear-gradient(
+      rgba(0, 0, 0, 0.75), 
+      rgba(100, 100, 100, 0.65)
+    ),, url(/assets/blog/${post.heroImage})`}
   class="p-10 bg-blue-500 rounded-md flex flex-col text-white bg-cover bg-center" 
   href={post.url}>
   <h2 class="mb-8 font-bold">{post.title}</h2>

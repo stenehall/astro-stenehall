@@ -4,6 +4,7 @@ import Main from '../layouts/Main.astro'
 import slugify from 'slugify'
 
 const { collection } = Astro.props;
+const permalink = Astro.request.url.pathname
 
 export async function createCollection() {
   const allPosts = Astro.fetchContent('./posts/*.md');
@@ -31,7 +32,7 @@ export async function createCollection() {
   };
 }
 ---
-<Main title={`All blog posts about ${collection.params.tag}`}>
+<Main title={`${collection.params.tag}`} description={`All blog posts about ${collection.params.tag}`} permalink={permalink}>
   <div class="mt-28">
     <h1>All posts tagged as: {collection.params.tag}</h1>
     <div class="h-64 grid grid-flow-col grid-cols-3 gap-4">

@@ -158,26 +158,6 @@ import WorkIcon from './WorkIcon'
     </div>
   </div>
 </Section>
-<script>
-export default Vue.extend({
-  components: {
-    Section,
-    Intro,
-    Work,
-    WorkIcon,
-  },
-  data() {
-    return { activeWork: -1 }
-  },
-  methods: {
-    setActive(index) {
-      return () => {
-        this.activeWork = index
-      }
-    },
-  },
-})
-</script>
 <style lang="scss">
 .section {
   background: #ccc;

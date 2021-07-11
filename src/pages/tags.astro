@@ -3,6 +3,10 @@ import Main from '../layouts/Main.astro'
 
 const allPosts = Astro.fetchContent('./posts/*.md');
 
+const title="Tags"
+const description="Tagcloud of all tags for this site"
+const permalink = "tags"
+
 const tags = {}
 allPosts.forEach(post => {
   post.tags.forEach(tag => {
@@ -11,7 +15,7 @@ allPosts.forEach(post => {
   })
 })
 ---
-<Main title={`Tags`}>
+<Main title={title} description={description} permalink={permalink}>
   <div class="h-screen flex flex-col justify-center content-center">
     <h1 class="self-center">Tags</h1>
     <ul class="self-center mt-10">
