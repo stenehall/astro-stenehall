@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title: string;
+  flex: string;
+}
+
+const { title, flex } = Astro.props;
+---
+<section>
+  <div class={`${flex ? 'items-stretch flex' : ''}`}>
+    {title && <h2 class="title">
+      {title}
+    </h2>}
+    <slot />
+  </div>
+</section>
+<style lang="scss">
+section {
+  min-height: calc(100vh - 4rem);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 2rem;
+  grid-template-columns: 1fr;
+
+  > div {
+    max-width: 90rem;
+    justify-self: center;
+    width: 100%;
+  }
+}
+</style>

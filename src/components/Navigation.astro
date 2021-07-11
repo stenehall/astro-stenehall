@@ -1,0 +1,140 @@
+---
+import Logo from './Logo'
+const menu = [
+  {name: "Home", permalink: "/"},
+  {name: "Tags", permalink: "/tags"},
+  {name: "About", permalink: "/about"},
+]
+---
+<style lang="scss">
+
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  clip-path: circle(20px at calc(100vw - 3rem) calc(100vh - 3rem));
+  background: linear-gradient(45deg, #30f0e0, #8840bb, #ee13a0, #f2ba10);
+  transition: clip-path 0.5s;
+  pointer-events: none;
+  color: #fff;
+  padding: 10rem 2rem 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+
+  a {
+    color: #fff;
+  }
+
+  div {
+    max-width: 30rem;
+  }
+}
+
+ul {
+  font-size: 2rem;
+}
+
+.visible {
+  clip-path: circle(200% at calc(100vw - 3rem) calc(100vh - 3rem));
+  pointer-events: all;
+
+  svg {
+    transform: rotate(-90deg);
+
+    .top {
+      stroke-dashoffset: -60px;
+    }
+
+    .bottom {
+      stroke-dashoffset: -60px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  aside {
+    clip-path: circle(20px at calc(100vw - 3rem) calc(4rem));
+    flex-direction: column;
+  }
+
+  .visible {
+    clip-path: circle(200% at calc(100vw - 3rem) calc(4rem));
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+svg {
+  position: fixed;
+  right: calc(3rem - 12px);
+  bottom: calc(3rem - 10px);
+  pointer-events: all;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  polyline {
+    stroke-dasharray: 40px 300px;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.2s;
+  }
+
+  @media (min-width: 640px) {
+    right: calc(3rem - 12px);
+    top: calc(4rem - 10px);
+    bottom: auto;
+  }
+}
+
+</style>
+
+<div class="nav">
+  <Logo />
+
+  <aside>
+    <!-- <LatestArticles :articles="articles" /> -->
+    <svg
+      id="menu"
+      width="24px"
+      viewBox="0 0 100 80"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        fill="transparent"
+        stroke="currentColor"
+        stroke-width="12"
+      >
+        <polyline class="top" points="10 10 50 10 10 40" />
+        <line x1="10" y1="40" x2="90" y2="40" />
+        <polyline class="bottom" points="90 70 50 70 10 40" />
+      </g>
+    </svg>
+    <nav>
+      <ul class="list-inside font-bold">
+        {menu.map((link, id) => (
+        <li class="list-decimal">
+          <a class="font-normal" href={link.permalink}>{link.name}</a>
+        </li>
+        ))}
+      </ul>
+    </nav>
+    <!-- <ColorMode /> -->
+    <div>
+      <h2>Johan Stenehall</h2>
+      <p>
+        A developer building things, currently for Volvo Car Mobility creating
+        their web. At work he mostly codes Vue, React and Elm but also some
+        Kotlin.
+      </p>
+    </div>
+  </aside>
+</div>

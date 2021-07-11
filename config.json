@@ -1,0 +1,6 @@
+{
+  "menu": [
+    { "text": "Welcome", "link": "/" },
+    { "text": "Example", "link": "/example" }
+  ]
+}

@@ -1,0 +1,78 @@
+---
+import Section from './Section'
+import Block from './Block'
+import Intro from './Intro'
+---
+<Section title="Skills" class="skills" data-color="skills" data-name="skills">
+  <div class="grid gap-12 justify-start items-start">
+    <Intro className="intro">
+      <p>
+        Having worked as a full-stack / front-end developer for almost 10
+        years I've gathered a rather broad skillset. While I prefer front-end
+        work I'm confortable with back-end work as well.
+      </p>
+    </Intro>
+    <Block title="Front-end" className="frontend">
+      My current prefered front-end stack's
+      <em data-icon="react">React</em> with <em>Redux</em> or
+      <em>Mobx</em> written in modern <em>ES*</em>. For styling
+      <em data-icon="scss">SCSS</em>, <em>styled-components</em>,
+      <em>modular css</em> or whatever fits the projects the best. To bake it
+      all nicely <em data-icon="webpack">Webpack</em>,
+      <em data-icon="babel">Babel</em>, <em>PostCSS</em> and other nice tools
+      are used. In the end it all results in <em data-icon="html5">HTML5</em>,
+      <em data-icon="css3">CSS3</em> and <em data-icon="js">Javascript</em>. I
+      currently much prefer <em>Jest</em> for front-end testing.
+    </Block>
+    <Block title="Back-end" className="backend">
+      Lately I've prefered writing small
+      <em data-icon="node">node.js</em> based backends, micro-services if you
+      so will. But I've also worked with <em data-icon="ruby">Ruby</em> on
+      <em data-icon="rails">Rails</em>, <em data-icon="php">PHP</em> and even
+      some <em data-icon="python">Python</em> and
+      <em data-icon="java">Java</em>.
+    </Block>
+    <Block title="Servers" className="server">
+      If I get to decide I like to ship it all as a
+      <em data-icon="docker">docker</em> image. Second best is to push it all
+      to <em data-icon="docker">Heroku</em>. I'm also confortable setting up a
+      <em>Linux</em> server but try to stay away from Windows.
+    </Block>
+    <Block title="Databases" className="databases">
+      I've worked in plenty of projects using both
+      <em data-icon="mysql">SQL</em> (I know there's other sql dialecs as well
+      but come on, My is the best name) and <em>NoSQL</em> databases. From
+      designing database schemas to using and adopting existing. I've read
+      about <em>BCNF</em> at university but used it to little to remember the
+      exact definition.
+    </Block>
+    <Block title="Design" className="design">
+      While I'm in no way a designer I'm comfortable in several design tools
+      such as <em>Sketch</em> and <em data-icon="photoshop">Photoshop</em>.
+    </Block>
+    <Block title="Tools" className="tools">
+      I'm one of those wannabe <em data-icon="vim">Vim</em> users, but in all
+      honesty I also use <em data-icon="atom">Atom</em> a lot and lately even
+      <em data-icon="vs">VS Code</em>. For code versioning I prefer
+      <em data-icon="git">Git</em>.
+    </Block>
+  </div>
+</Section>
+
+<style lang="scss">
+.grid {
+  grid-template-rows: max-content;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'intro intro server server'
+    'frontend frontend databases design'
+    'frontend frontend databases design'
+    'backend backend databases tools';
+
+  @media only screen and (max-width: 830px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'intro' 'frontend' 'backend' 'databases' 'design' 'server' 'tools';
+  }
+}
+
+</style>

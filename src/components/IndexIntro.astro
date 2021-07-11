@@ -1,0 +1,95 @@
+---
+import Section from './Section'
+
+// const webp = require('~/assets/stenehall.jpg?format=webp&resize&sizes[]=300&sizes[]=640&sizes[]=1000')
+// const jpeg = require('~/assets/stenehall.jpg?resize&sizes[]=300&sizes[]=640&sizes[]=1000')
+---
+<Section data-color="body-intro" data-name="intro">
+  <div class="grid">
+    <div class="intro">
+      <p class="h2">Hi There!</p>
+      <div id="iam" class="iam">
+        <span class="">
+          <span class="i-am-johan h1">I'm </span>
+          <h1 class="i-am-johan h1 inline">Johan Stenehall</h1>
+        </span>
+      </div>
+      <p class="">
+        A developer building things, currently for Volvo Car Mobility (M)
+        creating their web.
+      </p>
+    </div>
+    <div class="photo">
+      <picture>
+        <source src-set="/stenehall.jpg" type="image/jpeg" />
+        <img
+          width="640"
+          height="512"
+          src="/stenehall.jpg"
+          alt="Me in the sun on the patio"
+        />
+      </picture>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss">
+section {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 2rem;
+  grid-template-columns: 1fr;
+
+  > div {
+    max-width: 90rem;
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.iam {
+  font-size: 2rem;
+}
+
+.i-am-johan {
+  font-size: inherit;
+}
+
+.i-am-johan[data-v-697f62ec] {
+  font-size: inherit;
+}
+
+.grid {
+  align-self: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: min-content 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    grid-template-areas: 'photo intro';
+  }
+
+  .intro {
+    grid-area: intro;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .photo {
+    grid-area: photo;
+  }
+}
+</style>

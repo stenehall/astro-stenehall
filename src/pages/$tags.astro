@@ -1,0 +1,43 @@
+---
+import Excerpt from '../components/Excerpt.astro';
+import Main from '../layouts/Main.astro'
+import slugify from 'slugify'
+
+const { collection } = Astro.props;
+
+export async function createCollection() {
+  const allPosts = Astro.fetchContent('./posts/*.md');
+
+  const tags = {}
+  allPosts.forEach(post => {
+    post.tags.forEach(tag => {
+      tags[tag] = tags[tag] ?? []
+      tags[tag].push(post)
+    })
+  })
+
+  return {
+    routes: Object.keys(tags).map((tag, i) => {
+      const params = {tag, posts: tags[tag]};
+      return params;
+    }),
+    permalink: ({ params }) => `/tags/${params.tag}`,
+    async data({ params }) {
+      return params.tag ? tags[params.tag] : {};
+    },
+    // Note: The default pageSize is fine because technically only one data object
+    // is ever returned per route. We set it to Infinity in this example for completeness.
+    pageSize: Infinity,
+  };
+}
+---
+<Main title={`All blog posts about ${collection.params.tag}`}>
+  <div class="mt-28">
+    <h1>All posts tagged as: {collection.params.tag}</h1>
+    <div class="h-64 grid grid-flow-col grid-cols-3 gap-4">
+      {collection.data.map(post => 
+        <Excerpt post={post} />
+      )}
+    </div>
+  </div>  
+</Main>

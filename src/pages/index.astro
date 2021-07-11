@@ -1,0 +1,26 @@
+---
+import Navigation from '../components/Navigation.astro';
+import BaseHead from '../components/BaseHead.astro';
+import IndexIntro from '../components/IndexIntro.astro';
+import IndexAboutMe from '../components/IndexAboutMe.astro';
+import IndexStats from '../components/IndexStats.astro';
+import IndexSkills from '../components/IndexSkills.astro';
+import IndexWork from '../components/IndexWork.astro';
+
+const {content, title, description, publishDate, author, heroImage, permalink} = Astro.props;
+---
+<html>
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+  </head>
+
+  <body class="bg-white">
+    <Navigation />
+    <IndexIntro />
+    <IndexAboutMe />
+    <IndexStats />
+    <IndexSkills />
+    <IndexWork />
+  </body>
+</html>
+

@@ -1,0 +1,71 @@
+---
+import Block from './Block'
+import Section from './Section'
+---
+<Section class="section" data-color="about-me" data-name="about-me">
+  <div class="grid">
+    <h2 class="title">Who am I?</h2>
+    <div class="about">
+      <Block title="Developer" class="">
+        My first experiance with web development was just after christmas
+        1996. We got internet at home as an x-mas gift and so the story
+        begins.
+        <br />
+        I convinced my mother to print a few pages of documentation, turned
+        out to be maybe 100 A4s. Since then I've been doing web in some way.
+        Now, 20 years later, I've been working as a professional web developer
+        for about a decade and still love it.
+      </Block>
+      <Block title="Father" class="">
+        During that period my life have also changed a lot. I've found a
+        partner. We've traveled Japan. We've moved to Stockholm. We've had two
+        kids. And so much more have happened.
+      </Block>
+      <Block title="The rest" class="">
+        During these years I've also climbed a lot, I've been drinking a lot
+        of coffee, sometimes while playing Magic the Gathering or some board
+        game.
+      </Block>
+    </div>
+  </div>
+</Section>
+<style scoped lang="scss">
+.grid {
+  align-self: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: min-content 1fr;
+}
+
+.about {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section {
+    background: linear-gradient(to right, #fff 50%, #eee 50% 100%);
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    grid-template-areas: 'title about';
+  }
+
+  .about {
+    grid-area: about;
+    gap: 3rem;
+  }
+
+  .title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+</style>

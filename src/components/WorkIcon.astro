@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string,
+  logo: string,
+  logoWidth: string,
+  logoHeight: string,
+  setActive: array,
+}
+
+const { title, logo, logoWidth, logoHeight, setActive} = Astro.props;
+---
+<img
+  class="cursor-pointer"
+  height={logoHeight}
+  width={logoWidth}
+  src={`/icons/${logo}.svg`}
+  alt={title}
+  @click="setActive"
+/>
+<style>
+img {
+  height: 2em;
+  width: auto;
+}
+</style>

@@ -1,0 +1,214 @@
+---
+import Section from './Section'
+import Intro from './Intro'
+import Work from './Work'
+import WorkIcon from './WorkIcon'
+---
+<Section class="work" data-transform data-color="work" data-name="work">
+  <div class="grid">
+    <Intro class="intro">
+      <h2 class="">Work?</h2>
+      <p>
+        Here's the last employeers I've had. Ranging from an agency to a small
+        startup to a medium-sized rapidly expanding company. Working both with
+        client and inhouse, from short-term to long-term projects.
+      </p>
+    </Intro>
+    <div class="body">
+      <Work
+        title="M"
+        link="https://m.co"
+        class="m"
+        logo="m"
+        logo-width="124"
+        logo-height="100"
+        start="2018-04-01"
+        setActive="setActive(0)"
+        isActive="activeWork == 0"
+        techy={[
+          'VueES',
+          'Node.js',
+          'Javascript',
+          'CSS/SCSS/LESS',
+          'Jest',
+          'GraphQL',
+          'Firebase',
+          'Kotlin',
+          'Elm',
+        ]}
+      >
+        M is creating an entirely new service that gives people personal and
+        dependable access to cars, on their terms. I'm helping create all the
+        web for this, including the back-office and customer facing sites.
+      </Work>
+
+      <Work
+        title="iZettle"
+        link="https://izettle.com"
+        class="izettle"
+        logo="izettle"
+        logo-width="300"
+        logo-height="83"
+        start="2016-06-01"
+        end="2018-04-01"
+        setActive="setActive(1)"
+        isActive="activeWork == 1"
+        techy={[
+          'Ruby/Rails',
+          'ES6',
+          'Node.js',
+          'Javascript',
+          'CSS/SCSS/LESS',
+          'React',
+          'Redux',
+          'Mobx',
+          'Jest',
+        ]}
+      >
+        <p>
+          For many years iZettle have been pionering payments for small
+          buisnesses.
+        </p>
+        <p>
+          Working as a web developer I get to code on iZettle Portal as well
+          as our front end for our new Invoice service and of course our main
+          site.
+        </p>
+      </Work>
+      <Work
+        title="Narrative"
+        link="http://getnarrative.com/"
+        class="narrative"
+        start="2014-06-01"
+        end="2016-06-01"
+        logo="narrative"
+        logo-width="32"
+        logo-height="44"
+        setActive="setActive(2)"
+        isActive="activeWork == 2"
+        techy={[
+          'PHP',
+          'Wordpress',
+          'Zendesk',
+          'Shopify',
+          'Javascript',
+          'ES6',
+          'React',
+          'AngularJS',
+          'jQuery',
+          'CSS/SCSS/LESS',
+          'Redux',
+          'Mocha',
+          'Node.js',
+        ]}
+      >
+        <p>
+          This Linköping based startup were once the biggest thing on
+          Kickstarter.
+        </p>
+
+        <p>
+          Working as the lead (and in the end only) front-end developer. I was
+          part of creating all web content. From the Narrative web app, to the
+          main site, to the blog and support pages and much more.
+        </p>
+      </Work>
+      <Work
+        title="NOC"
+        link="https://www.nocweb.se/"
+        class="noc"
+        start="2010-07-01"
+        end="2014-06-01"
+        logo="noc"
+        logo-width="90"
+        logo-height="69"
+        setActive="setActive(3)"
+        isActive="activeWork == 3"
+        techy={[
+          'PHP',
+          'Wordpress',
+          'Drupal',
+          'WooCommerce',
+          'Kohana',
+          'Codeigniter',
+          'Javascript',
+          'CSS/SCSS/LESS',
+          'jQuery',
+          'Ruby/Rails',
+        ]}
+      >
+        <p>
+          This Linköping based web agency have helped big and small companies
+          for the past 10 years to realize their visions. I worked for them
+          for 4 years and during that time I learnt lots.
+        </p>
+
+        <p>
+          As a web developer I worked on project for big and small companies
+          getting a deep understanding of the different challanges and
+          perspective they face. Working mainly with PHP as a backend
+          language, using Wordpress, Drupal, Kohana, Codeigniter and others.
+        </p>
+
+        <p>
+          But also coding the front ends, html, javascript and css and all the
+          normal frameworks for that.
+        </p>
+      </Work>
+    </div>
+  </div>
+</Section>
+<script>
+export default Vue.extend({
+  components: {
+    Section,
+    Intro,
+    Work,
+    WorkIcon,
+  },
+  data() {
+    return { activeWork: -1 }
+  },
+  methods: {
+    setActive(index) {
+      return () => {
+        this.activeWork = index
+      }
+    },
+  },
+})
+</script>
+<style lang="scss">
+.section {
+  background: #ccc;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 3rem;
+}
+
+.grid {
+  gap: 3rem;
+  display: grid;
+  justify-items: start;
+  align-items: start;
+}
+
+.icons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 640px) {
+  .work {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'intro body';
+    }
+  }
+}
+</style>

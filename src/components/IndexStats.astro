@@ -1,0 +1,156 @@
+---
+import Section from './Section'
+---
+<Section class="stats" data-color="stats" data-name="some numbers">
+  <div>
+    <h2>Me, summarized in numbers.</h2>
+    <ul>
+      <li>
+        <span><strong>1</strong> pair of climbing shoes</span>
+      </li>
+      <li>
+        <span><strong>2</strong> children</span>
+      </li>
+      <li>
+        <span><strong>10+</strong>years of experience</span>
+      </li>
+      <li>
+        <span><strong>20</strong>years on irc</span>
+      </li>
+      <li>
+        <span><strong>24</strong>years online</span>
+      </li>
+      <li>
+        <span>
+          <strong>1488 </strong> github contributions last year (private and
+          for work)
+        </span>
+      </li>
+      <li>
+        <span><strong>1825+</strong> cups of coffee last year</span>
+      </li>
+    </ul>
+  </div>
+</Section>
+
+<style lang="scss">
+ul {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+
+  li {
+    border: 2px solid #ccc;
+    position: relative;
+    margin: 0 -2px -2px 0;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 0;
+      padding-bottom: 100%;
+    }
+
+    span {
+      position: absolute;
+      padding: 1rem;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
+    }
+  }
+
+  strong {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    // color: var(--color-text-offset);
+  }
+
+  li:nth-child(1) {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+
+    strong {
+      font-size: 4rem;
+    }
+  }
+
+  li:nth-child(2) {
+    grid-column: 4 / span 4;
+    grid-row: 1 / span 4;
+
+    strong {
+      font-size: 5rem;
+    }
+  }
+
+  li:nth-child(3) {
+    grid-column: 8 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  li:nth-child(4) {
+    grid-column: 8 / span 2;
+    grid-row: 3 / span 2;
+  }
+
+  li:nth-child(5) {
+    grid-column: 10 / span 2;
+    grid-row: 2 / span 2;
+  }
+
+  li:nth-child(6) {
+    grid-column: 12 / span 4;
+    grid-row: 1 / span 4;
+    strong {
+      font-size: 4rem;
+    }
+  }
+  li:nth-child(7) {
+    grid-column: 16 / span 3;
+    grid-row: 2 / span 3;
+    strong {
+      font-size: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    li:nth-child(3),
+    li:nth-child(4) {
+      strong {
+        font-size: 1rem;
+      }
+    }
+
+    li:nth-child(6),
+    li:nth-child(7) {
+      strong {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 830px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+
+    li:nth-child(n) {
+      grid-column: auto;
+      grid-row: auto;
+
+      strong {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+</style>

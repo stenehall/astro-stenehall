@@ -1,0 +1,82 @@
+---
+export interface Props {
+  title: string,
+  link: string,
+  start: string,
+  end: string,
+  techy: array,
+  logo: string,
+  logoWidth: string,
+  logoHeight: string,
+}
+
+const { title, logo, logoWidth, logoHeight, link, start, end, techy, isActive } = Astro.props;
+
+const readableDate = (dateStr: string) => {
+  if (dateStr) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }
+    return new Date(dateStr).toLocaleDateString('en', options)
+  } else {
+    return 'Present'
+  }
+}
+
+---
+<div class="p-8 bg-gray-50 rounded-3xl">
+  <div>
+    <img
+      class="cursor-pointer"
+      height={logoHeight}
+      width={logoWidth}
+      src={`/icons/${logo}.svg`}
+      alt={title}
+      @click="setActive"
+    />
+    <p class="time my-2">
+      <time datetime={start}>{ readableDate(start) }</time> -
+      <time datetime={end}>{ readableDate(end) }</time>
+    </p>
+    <slot />
+    <a href={link} title="title">{ link }</a>
+    <ul class="mt-2">
+      <li><strong>Techy words:</strong></li>
+      {techy.map((item, id) => <li key={id}>
+        { item }
+      </li>)}
+    </ul>
+  </div>
+</div>
+<style>
+img {
+  height: 2em;
+  width: auto;
+}
+
+time {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+img {
+  height: 2em;
+  width: auto;
+}
+ul {
+  padding: 0;
+  font-size: 0.8rem;
+}
+li {
+  display: inline;
+}
+li::after {
+  content: ', ';
+}
+li:last-child::after {
+  content: '';
+}
+p + p {
+  margin-top: 1rem;
+}
+.hidden {
+  display: none;
+}
+</style>

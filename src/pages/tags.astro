@@ -1,0 +1,29 @@
+---
+import Main from '../layouts/Main.astro'
+
+const allPosts = Astro.fetchContent('./posts/*.md');
+
+const tags = {}
+allPosts.forEach(post => {
+  post.tags.forEach(tag => {
+    tags[tag] = tags[tag] ?? []
+    tags[tag].push(post)
+  })
+})
+---
+<Main title={`Tags`}>
+  <div class="h-screen flex flex-col justify-center content-center">
+    <h1 class="self-center">Tags</h1>
+    <ul class="self-center mt-10">
+      {Object.keys(tags).map(tag => (
+        <li><a href={`/tags/${tag}`}>{tag} ({tags[tag].length})</a></li>
+      ))}
+    </ul>
+    </div>
+</Main>
+<style>
+  li {
+    @apply inline;
+    @apply mr-4;
+  }
+</style>
