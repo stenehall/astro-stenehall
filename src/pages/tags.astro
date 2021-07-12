@@ -20,7 +20,7 @@ allPosts.forEach(post => {
     <h1 class="self-center">Tags</h1>
     <ul class="self-center mt-10">
       {Object.keys(tags).map(tag => (
-        <li><a href={`/tags/${tag}`}>{tag} ({tags[tag].length})</a></li>
+        <li><a href={`/tag/${tag}`}>{tag} ({tags[tag].length})</a></li>
       ))}
     </ul>
     </div>

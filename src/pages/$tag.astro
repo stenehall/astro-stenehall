@@ -18,16 +18,13 @@ export async function createCollection() {
   })
 
   return {
-    routes: Object.keys(tags).map((tag, i) => {
-      const params = {tag, posts: tags[tag]};
-      return params;
-    }),
-    permalink: ({ params }) => `/tags/${params.tag}`,
+    routes: Object.keys(tags).map((tag, i) => (
+      {tag, posts: tags[tag]}
+    )),
+    permalink: ({ params }) => `/tag/${params.tag}`,
     async data({ params }) {
       return params.tag ? tags[params.tag] : {};
     },
-    // Note: The default pageSize is fine because technically only one data object
-    // is ever returned per route. We set it to Infinity in this example for completeness.
     pageSize: Infinity,
   };
 }
