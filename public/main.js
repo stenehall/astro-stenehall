@@ -9,10 +9,22 @@ let options = {
 
 const skills = document.querySelector('#skills')
 
-let observer = new IntersectionObserver((evt) => {
+const skillsObserver = new IntersectionObserver((evt) => {
   if(evt[0].isIntersecting) {
     skills.classList.add('visible')
   }
 }, options);
 
-observer.observe(skills)
+skillsObserver.observe(skills)
+
+const work = document.querySelector('#work')
+
+const workObserver = new IntersectionObserver((evt) => {
+  if(evt[0].isIntersecting) {
+    document.querySelectorAll('#work img').forEach(img => {
+      img.src = img.dataset.src
+    })
+  }
+}, options);
+
+workObserver.observe(work)
