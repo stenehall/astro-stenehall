@@ -11,7 +11,7 @@ const { title, publishDate, heroImage, tags } = Astro.props.post;
   <div>
     <header class="flex flex-col items-center pb-16 mb-16 border-b-2 border-gray-400">
       {heroImage && <img class="hero-image" loading="lazy" src={`/assets/blog/${heroImage}`} />}
-      <p class="mt-16">{publishDate} {tags.map(tag => <a class="tag ml-4" href={`/tags/${tag}`}>{tag}</a>)}</p>
+      <p class="mt-16">{publishDate} {tags.map(tag => <a class="tag ml-4" href={`/tag/${tag}`}>{tag}</a>)}</p>
       <h1 class="title">{title}</h1>
     </header>
     <main class="prose">
