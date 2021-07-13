@@ -41,67 +41,68 @@ em[data-icon]::after {
   content: "";
 }
 
-em[data-icon="js"]::after {
-  background: url("/devicon/icons/javascript/javascript-plain.svg");
+.visible {
+  em[data-icon="js"]::after {
+    background: url("/devicon/icons/javascript/javascript-plain.svg");
+  }
+  em[data-icon="css3"]::after {
+    background: url("/devicon/icons/css3/css3-plain.svg");
+  }
+  em[data-icon="html5"]::after {
+    background: url("/devicon/icons/html5/html5-original.svg");
+  }
+  em[data-icon="babel"]::after {
+    background: url("/devicon/icons/babel/babel-plain.svg");
+  }
+  em[data-icon="webpack"]::after {
+    background: url("/devicon/icons/webpack/webpack-plain.svg");
+  }
+  em[data-icon="scss"]::after {
+    background: url("/devicon/icons/sass/sass-original.svg");
+  }
+  em[data-icon="react"]::after {
+    background: url("/devicon/icons/react/react-original.svg");
+  }
+  em[data-icon="node"]::after {
+    background: url("/devicon/icons/nodejs/nodejs-plain.svg");
+  }
+  em[data-icon="ruby"]::after {
+    background: url("/devicon/icons/ruby/ruby-plain.svg");
+  }
+  em[data-icon="rails"]::after {
+    background: url("/devicon/icons/rails/rails-plain.svg");
+  }
+  em[data-icon="php"]::after {
+    background: url("/devicon/icons/php/php-plain.svg");
+  }
+  em[data-icon="python"]::after {
+    background: url("/devicon/icons/python/python-plain.svg");
+  }
+  em[data-icon="java"]::after {
+    background: url("/devicon/icons/java/java-plain.svg");
+  }
+  em[data-icon="docker"]::after {
+    background: url("/devicon/icons/docker/docker-plain.svg");
+  }
+  em[data-icon="mysql"]::after {
+    background: url("/devicon/icons/mysql/mysql-plain.svg");
+  }
+  em[data-icon="photoshop"]::after {
+    background: url("/devicon/icons/photoshop/photoshop-plain.svg");
+  }
+  em[data-icon="vim"]::after {
+    background: url("/devicon/icons/vim/vim-plain.svg");
+  }
+  em[data-icon="atom"]::after {
+    background: url("/devicon/icons/atom/atom-original.svg");
+  }
+  em[data-icon="vs"]::after {
+    background: url("/devicon/icons/visualstudio/visualstudio-plain.svg");
+  }
+  em[data-icon="git"]::after {
+    background: url("/devicon/icons/git/git-plain.svg");
+  }
 }
-em[data-icon="css3"]::after {
-  background: url("/devicon/icons/css3/css3-plain.svg");
-}
-em[data-icon="html5"]::after {
-  background: url("/devicon/icons/html5/html5-original.svg");
-}
-em[data-icon="babel"]::after {
-  background: url("/devicon/icons/babel/babel-plain.svg");
-}
-em[data-icon="webpack"]::after {
-  background: url("/devicon/icons/webpack/webpack-plain.svg");
-}
-em[data-icon="scss"]::after {
-  background: url("/devicon/icons/sass/sass-original.svg");
-}
-em[data-icon="react"]::after {
-  background: url("/devicon/icons/react/react-original.svg");
-}
-em[data-icon="node"]::after {
-  background: url("/devicon/icons/nodejs/nodejs-plain.svg");
-}
-em[data-icon="ruby"]::after {
-  background: url("/devicon/icons/ruby/ruby-plain.svg");
-}
-em[data-icon="rails"]::after {
-  background: url("/devicon/icons/rails/rails-plain.svg");
-}
-em[data-icon="php"]::after {
-  background: url("/devicon/icons/php/php-plain.svg");
-}
-em[data-icon="python"]::after {
-  background: url("/devicon/icons/python/python-plain.svg");
-}
-em[data-icon="java"]::after {
-  background: url("/devicon/icons/java/java-plain.svg");
-}
-em[data-icon="docker"]::after {
-  background: url("/devicon/icons/docker/docker-plain.svg");
-}
-em[data-icon="mysql"]::after {
-  background: url("/devicon/icons/mysql/mysql-plain.svg");
-}
-em[data-icon="photoshop"]::after {
-  background: url("/devicon/icons/photoshop/photoshop-plain.svg");
-}
-em[data-icon="vim"]::after {
-  background: url("/devicon/icons/vim/vim-plain.svg");
-}
-em[data-icon="atom"]::after {
-  background: url("/devicon/icons/atom/atom-original.svg");
-}
-em[data-icon="vs"]::after {
-  background: url("/devicon/icons/visualstudio/visualstudio-plain.svg");
-}
-em[data-icon="git"]::after {
-  background: url("/devicon/icons/git/git-plain.svg");
-}
-
 
 // :root.dark, :root.light {
 //   --theme-font-sans: montserrat,serif;

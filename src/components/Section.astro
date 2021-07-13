@@ -2,11 +2,12 @@
 export interface Props {
   title: string;
   flex: string;
+  id: string
 }
 
-const { title, flex } = Astro.props;
+const { title, id, flex } = Astro.props;
 ---
-<section>
+<section id={`${id ? id : ''}`}>
   <div class={`${flex ? 'items-stretch flex' : ''}`}>
     {title && <h2 class="title">
       {title}
