@@ -20,7 +20,7 @@ The plugin will make a simple search in your `<head>` and make sure it doesn’t
 A clearly visible red “No Index” will show on every page containing the noindex. But it won’t show up when in admin.
 
 [
-<img class="alignnone size-full wp-image-157" src="/assets/blog/2012/05/no-index.png" alt="no-index" width="287" height="51" />
+<img class="alignnone size-full wp-image-157" src="/assets/2012/05/no-index.png" alt="no-index" width="287" height="51" />
 ][1]
 
 ## Download

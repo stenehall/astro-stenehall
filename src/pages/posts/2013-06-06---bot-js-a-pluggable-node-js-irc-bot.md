@@ -1,8 +1,9 @@
 ---
 title: Bot.js a pluggable node.js irc bot
-heroImage: /2013/06/coffee-hand.jpeg
+heroImage: 2013/06/coffee-hand.jpeg
 description: I'm definitely reinventing the wheel here. There's already lots of great bots, even great node.js bots.
 published: true
+publishDate: 2013-06-06
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:
