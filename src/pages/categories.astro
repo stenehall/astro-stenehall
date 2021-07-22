@@ -1,0 +1,21 @@
+---
+import Taxonomy from '../layouts/Taxonomy.astro'
+
+const allPosts = Astro.fetchContent('./posts/*.md');
+const title="Categories"
+const description="Tagcloud of all categories for this site"
+const permalink = "categories"
+
+const categories = {}
+allPosts.forEach(post => {
+  if(post.category) {
+    categories[post.category] = categories[post.category] ?? []
+    categories[post.category].push(post)
+  }
+})
+---
+<Taxonomy title={title} description={description} permalink={permalink}>
+  {Object.keys(categories).map(category => (
+    <li class="inline mr-4"><a href={`/category/${category}`}>{category} ({categories[category].length})</a></li>
+  ))}
+</Taxonomy>

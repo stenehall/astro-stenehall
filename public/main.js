@@ -1,3 +1,7 @@
+const skills = document.querySelector('#skills')
+const work = document.querySelector('#work')
+const fadeIn = document.querySelectorAll('[data-fade-in]')
+
 document.querySelector('#menu').addEventListener('click', evt => {
   document.querySelector('aside').classList.toggle('visible')
 })
@@ -7,24 +11,38 @@ let options = {
   threshold: 0
 }
 
-const skills = document.querySelector('#skills')
+if(skills) {
+  const skillsObserver = new IntersectionObserver((evt) => {
+    if(evt[0].isIntersecting) {
+      skills.classList.add('visible')
+    }
+  }, options);
 
-const skillsObserver = new IntersectionObserver((evt) => {
-  if(evt[0].isIntersecting) {
-    skills.classList.add('visible')
-  }
-}, options);
+  skillsObserver.observe(skills)
+}
 
-skillsObserver.observe(skills)
+if(work) {
+  const workObserver = new IntersectionObserver((evt) => {
+    if(evt[0].isIntersecting) {
+      document.querySelectorAll('#work img').forEach(img => {
+        img.src = img.dataset.src
+      })
+    }
+  }, options);
 
-const work = document.querySelector('#work')
+  workObserver.observe(work)
+}
 
-const workObserver = new IntersectionObserver((evt) => {
-  if(evt[0].isIntersecting) {
-    document.querySelectorAll('#work img').forEach(img => {
-      img.src = img.dataset.src
+if(fadeIn) {
+  const fadeInObserver = new IntersectionObserver((evts) => {
+    evts.map((evt) => {
+      if(evt.isIntersecting) {
+        evt.target.classList.add('visible')
+      } else {
+        evt.target.classList.remove('visible')
+      }
     })
-  }
-}, options);
+  }, options);
 
-workObserver.observe(work)
+  fadeIn.forEach(item => fadeInObserver.observe(item))
+}

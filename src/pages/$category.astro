@@ -1,0 +1,37 @@
+---
+import Excerpt from '../components/Excerpt.astro';
+import Main from '../layouts/Main.astro'
+import slugify from 'slugify'
+
+const { collection } = Astro.props;
+const permalink = Astro.request.url.pathname
+
+export async function createCollection() {
+  const allPosts = Astro.fetchContent('./posts/*.md');
+
+  const categories = {}
+  allPosts.forEach(post => {
+    if (post.category) {
+      categories[post.category] = categories[post.category] ?? []
+      categories[post.category].push(post)
+    }
+  })
+
+  return {
+    routes: Object.keys(categories).map((category, i) => (
+      {category, posts: categories[category]}
+    )),
+    permalink: ({ params }) => `/category/${params?.category}`,
+    async data({ params }) {
+      return params?.category ? categories[params?.category] : {};
+    },
+    pageSize: Infinity,
+  };
+}
+---
+<Main title={`${collection.params?.category}`} description={`All blog posts about ${collection.params?.category}`} permalink={permalink}>
+  <h1>All posts categoried as: {collection.params?.category}</h1>
+  {collection.data.map((post, id) => 
+    <Excerpt post={post} expanded={id==0} />
+  )}
+</Main>

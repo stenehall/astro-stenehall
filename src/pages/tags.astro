@@ -1,5 +1,5 @@
 ---
-import Main from '../layouts/Main.astro'
+import Taxonomy from '../layouts/Taxonomy.astro'
 
 const allPosts = Astro.fetchContent('./posts/*.md');
 
@@ -9,22 +9,18 @@ const permalink = "tags"
 
 const tags = {}
 allPosts.forEach(post => {
-  post.tags.forEach(tag => {
+  post.tags?.forEach(tag => {
     tags[tag] = tags[tag] ?? []
     tags[tag].push(post)
   })
 })
 ---
-<Main title={title} description={description} permalink={permalink}>
-  <div class="h-screen flex flex-col justify-center content-center">
-    <h1 class="self-center">Tags</h1>
-    <ul class="self-center mt-10">
-      {Object.keys(tags).map(tag => (
-        <li><a href={`/tag/${tag}`}>{tag} ({tags[tag].length})</a></li>
-      ))}
-    </ul>
-    </div>
-</Main>
+<Taxonomy title={title} description={description} permalink={permalink}>
+  {Object.keys(tags).map(tag => (
+    <li><a href={`/tag/${tag}`}>{tag} ({tags[tag].length})</a></li>
+  ))}
+</Taxonomy>
+
 <style>
   li {
     @apply inline;

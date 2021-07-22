@@ -1,17 +1,54 @@
 ---
+import {dateStr, dateIso} from '../utils'
+
 export interface Props {
   post: any;
+  expanded: boolean
 }
 
-const { post } = Astro.props;
----
-<a 
-  style={`background-image: linear-gradient(
-      rgba(0, 0, 0, 0.75), 
+const { post, expanded } = Astro.props;
+
+let background = "background-image: linear-gradient(0.45turn, rgba(255, 255, 255, 0.15), rgba(100, 100, 100, 0.5))"
+background = post.color ? `background: ${post.color}` : background
+background = post.heroImage ? `background-image: linear-gradient(
+  rgba(255, 255, 255, 0.75), 
       rgba(100, 100, 100, 0.65)
-    ),, url(/assets/blog/${post.heroImage})`}
-  class="p-10 bg-blue-500 rounded-md flex flex-col text-white bg-cover bg-center" 
+    ), url(/assets/blog${post.heroImage})` : background
+
+---
+<article class="flex" data-fade-in>
+<a 
+  class="pb-16" 
   href={post.url}>
-  <h2 class="mb-8 font-bold">{post.title}</h2>
-  <p>{post.description}</p>
+  <h2 class="mb-2 font-bold">{post.title}</h2>
+  <p class="uppercase text-xs">Published <time datetime={dateIso(post.publishDate)}>{dateStr(post.publishDate)}</time></p>
+  {expanded &&   
+    <div class="mt-4 text-lg">
+      <p>{post.description}</p>
+      <p class="mt-4 text-primary">Keep reading</p>
+    </div>}
 </a>
+</article>
+
+<style>
+p {
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+[data-fade-in] {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition-property: opacity,transform;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(.25,.46,.45,.94);
+}
+
+[data-fade-in].visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+</style>

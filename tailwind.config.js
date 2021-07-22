@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
   purge: [
     './public/**/*.html',
     './src/**/*.astro'
@@ -15,5 +15,19 @@ module.exports = {
       sans: ['Montserrat', 'sans-serif'],
       serif: ['Taviraj', 'serif'],
     },
+    extend: {
+      colors: {
+        code: '#FFC200',
+        article: '#82C7DE',
+        primary: '#e00031',
+        'primary-offset': '#eb0033',
+        secondary: '#43a9a3'
+      },
+    }
+  },
+  variants: {
+    extend: {
+     zIndex: ['hover', 'active'],
+    }
   }
 };

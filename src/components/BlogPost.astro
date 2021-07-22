@@ -1,24 +1,34 @@
 ---
+import {dateStr, dateIso} from '../utils'
+
 export interface Props {
   post: any
 }
 
-const { title, publishDate, heroImage, tags } = Astro.props.post;
+const { title, publishDate, heroImage, tags, category } = Astro.props.post;
+
+const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}</a>))).join(', ')
 ---
 
-<div class="layout">
-  <article class="content">
-  <div>
-    <header class="flex flex-col items-center pb-16 mb-16 border-b-2 border-gray-400">
-      {heroImage && <img class="hero-image" loading="lazy" src={`/assets/blog/${heroImage}`} />}
-      <p class="mt-16">{publishDate} {tags.map(tag => <a class="tag ml-4" href={`/tag/${tag}`}>{tag}</a>)}</p>
-      <h1 class="title">{title}</h1>
-    </header>
-    <main class="prose">
-      <slot />
-    </main>
-  </article>
-</div>
+<article>
+  <header>
+    {heroImage && <img class="hero-image" loading="lazy" src={`/assets/${heroImage}`} />}
+    <div class={`prose mx-16 max-w-screen-md mx-auto pt-12 ${!heroImage && 'mt-48'}`}>
+      <h1>{title}</h1>
+      <p><span class="mt-1 text-sm">By <strong>Johan Stenehall</strong> / <time datetime={dateIso(publishDate)}>{dateStr(publishDate)}</time></span>
+    </div>
+  </header>
+  <main class="prose mx-16 max-w-screen-md mx-auto pb-12">
+    <slot />
+  </main>
+  <footer class="text-sm pb-12 flex flex-col items-center">
+    <div>
+      <p class="text-sm">This was filled under <a href={`/category/${category}`} class="" title={category}>{category}</a>
+      with some tags: {tagsStr}
+      </p>
+    </div>
+  </footer>
+</article>
 
 <style>
 .tag::before {
@@ -31,6 +41,29 @@ const { title, publishDate, heroImage, tags } = Astro.props.post;
   object-position: center;
   max-width: 1280px;
   max-height: 50vh;
+  position: relative;
+  left: 0;
+  margin: 0;
+}
+
+footer::before {
+    content: "";
+    width: 30vw;
+    max-width: 200px;
+    height: 10px;
+    display: block;
+    border-top: 1px solid currentColor;
+    margin: 0 auto 3rem;
+}
+
+article::after {
+    content: "";
+    width: 30vw;
+    max-width: 200px;
+    height: 10px;
+    display: block;
+    border-bottom: 1px solid currentColor;
+    margin: 0 auto 2em;
 }
 
 @media (max-width: 50em) {
