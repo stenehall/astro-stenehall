@@ -14,22 +14,22 @@ import Section from './Section'
           <h1 class="i-am-johan h1 inline">Johan Stenehall</h1>
         </span>
       </div>
-      <p class="">
+      <p>
         A developer building things, currently for Volvo Car Mobility (M)
         creating their web.
       </p>
     </div>
-    <div class="photo">
-      <picture>
-        <source src-set="/stenehall.jpg" type="image/jpeg" />
-        <img
-          width="640"
-          height="512"
-          src="/stenehall.jpg"
-          alt="Me in the sun on the patio"
-        />
-      </picture>
-    </div>
+    <picture class="photo">
+      <source srcset="/stenehall.webp" type="image/webp" />
+      <source srcset="/stenehall.jpeg" type="image/jpeg" />
+      <img
+        class="shadow-md rounded"
+        width="640"
+        height="512"
+        src="/stenehall.jpeg"
+        alt="Me in the sun on the patio"
+      />
+    </picture>
   </div>
 </Section>
 
@@ -50,8 +50,8 @@ section {
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  width: auto;
 }
 
 .iam {
@@ -67,10 +67,10 @@ img {
 }
 
 .grid {
-  align-self: center;
   display: grid;
   gap: 1rem;
   grid-template-rows: min-content 1fr;
+  grid-template-areas: 'photo' 'intro';
 }
 
 @media (min-width: 640px) {

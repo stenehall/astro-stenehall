@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "convert-images": "cwebp -q 80 public "
   },
   "devDependencies": {
     "@astrojs/renderer-preact": "^0.1.3",
