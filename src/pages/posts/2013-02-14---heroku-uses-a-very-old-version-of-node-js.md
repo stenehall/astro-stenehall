@@ -2,6 +2,7 @@
 title: Heroku uses a very old version of node.js
 image: /wp-content/uploads/2013/02/coffee-table.jpeg
 published: true
+publishDate: 2013-02-14
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

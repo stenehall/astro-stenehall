@@ -3,6 +3,7 @@ title: 'Mailbox – Zero inbox'
 description: At work I've been running a very successful inbox zero for some time. Once an errand is taken care of it goes in the archive.
 image: /wp-content/uploads/2013/02/macbook-black-white2.jpeg
 published: true
+publishDate: 2013-02-26
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

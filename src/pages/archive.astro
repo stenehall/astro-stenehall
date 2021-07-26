@@ -1,0 +1,15 @@
+---
+import Excerpt from '../components/Excerpt.astro';
+import Main from '../layouts/Main.astro'
+
+const { collection } = Astro.props;
+const permalink = Astro.request.url.pathname
+
+const allPosts = Astro.fetchContent('./posts/*.md');
+---
+<Main title={`All blog posts`} description={`All blog posts`} permalink={permalink}>
+  <h1>All posts</h1>
+  {allPosts.map((post, id) => 
+    <Excerpt post={post} expanded={id==0} />
+  )}
+</Main>

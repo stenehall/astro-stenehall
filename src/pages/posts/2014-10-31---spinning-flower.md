@@ -3,6 +3,7 @@ title: Spinning flower
 description: I'm spinning around. Move out of my way.
 color: '#3999BF'
 published: true
+publishDate: 2014-10-31
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

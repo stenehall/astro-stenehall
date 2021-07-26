@@ -3,6 +3,7 @@ title: Animated toggle checkbox without javascript
 description: A simple animated togglable checkbox in pure html/css with no javascript.
 image: /wp-content/uploads/2014/10/coffee-hand.jpeg
 published: true
+publishDate: 2014-10-29
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

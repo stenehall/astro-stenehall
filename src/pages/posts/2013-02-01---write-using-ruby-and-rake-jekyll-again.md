@@ -1,6 +1,7 @@
 ---
 title: 'Write using ruby and rake &#8211; Jekyll again'
 published: true
+publishDate: 2013-02-01
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

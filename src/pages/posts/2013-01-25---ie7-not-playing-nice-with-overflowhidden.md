@@ -1,6 +1,7 @@
 ---
 title: IE7 not playing nice with overflow:hidden
 published: true
+publishDate: 2013-01-25
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

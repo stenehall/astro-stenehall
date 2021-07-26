@@ -5,6 +5,7 @@ template: post
 description: A four column css only layout with a 3 column image
 image: /wp-content/uploads/2015/11/22404962079_ea6809edb5_o-e1446986337512.jpg
 published: true
+publishDate: 2015-11-08
 category: code
 tags:
   - code

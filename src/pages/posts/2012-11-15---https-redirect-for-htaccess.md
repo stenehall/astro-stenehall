@@ -2,6 +2,7 @@
 title: Https redirect for htaccess
 description: Sometimes you don't have access to the server and have to do a redirect in a .htaccess file.
 published: true
+publishDate: 2012-11-15
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

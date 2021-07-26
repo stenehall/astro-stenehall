@@ -1,6 +1,7 @@
 ---
 title: dust.js a javascript template engine
 published: true
+publishDate: 2013-02-14
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

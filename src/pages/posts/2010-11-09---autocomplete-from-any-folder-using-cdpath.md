@@ -1,6 +1,7 @@
 ---
 title: Autocomplete from any folder using CDPATH
 published: true
+publishDate: 2010-11-09
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

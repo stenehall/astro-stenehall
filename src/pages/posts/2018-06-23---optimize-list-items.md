@@ -1,6 +1,7 @@
 ---
 title: Optimize , list items
 published: true
+publishDate: 2016-03-06
 layout: '../../layouts/BlogPost.astro'
 category: til
 tags:

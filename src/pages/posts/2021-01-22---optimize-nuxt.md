@@ -2,6 +2,7 @@
 title: Optimize a static nuxtjs site
 description: Lets see how much we can optimize a nuxt.js setup
 published: false
+publishDate: 2020-10-04
 layout: '../../layouts/BlogPost.astro'
 category: Code
 tags: 

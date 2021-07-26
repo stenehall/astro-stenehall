@@ -2,6 +2,7 @@
 title: Ruby screencasts
 description: A collection of good ruby screencasts
 published: true
+publishDate: 2013-02-14
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

@@ -3,6 +3,7 @@ title: Broken MySQL on Mavericks
 description: '(errno: 13 - Permission denied)'
 image: /wp-content/uploads/2014/03/macbook-table.jpeg
 published: true
+publishDate: 2014-03-09
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

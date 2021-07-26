@@ -1,6 +1,7 @@
 ---
 title: DigitalOcean offers 512MB vps for just $5 a month
 published: true
+publishDate: 2013-02-08
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

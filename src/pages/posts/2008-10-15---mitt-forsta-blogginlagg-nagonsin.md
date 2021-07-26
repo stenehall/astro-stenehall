@@ -2,6 +2,7 @@
 title: Mitt första blogginlägg någonsin
 description: The point of no return. I've had a blog for years and years but I've yet to write a single entry. So here it is.
 published: true
+publishDate: 2008-10-15
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

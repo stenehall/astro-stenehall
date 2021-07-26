@@ -1,6 +1,7 @@
 ---
 title: A fluid width, equal height calendar view.
 published: true
+publishDate: 2016-08-14
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

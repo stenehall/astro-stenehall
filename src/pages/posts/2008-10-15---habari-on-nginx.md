@@ -2,6 +2,7 @@
 title: Habari on nginx
 description: Since this site is running on a vps with a limited amount of ram I felt the need of changing from Apache to something less memory consuming.
 published: true
+publishDate: 2008-10-15
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

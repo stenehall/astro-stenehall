@@ -1,6 +1,7 @@
 ---
 title: Optimizing your WordPress site for Google PageSpeed Insight
 published: true
+publishDate: 2016-05-08
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

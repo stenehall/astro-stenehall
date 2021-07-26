@@ -1,6 +1,7 @@
 ---
 title: DuckDuckGo instant answers
 published: true
+publishDate: 2018-10-27
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

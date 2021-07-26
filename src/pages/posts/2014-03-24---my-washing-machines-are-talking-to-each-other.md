@@ -3,6 +3,7 @@ title: My washing machines are talking to each other
 description: Mitt första twitter-meddelande
 image: /wp-content/uploads/2014/03/coffee-mittens.jpeg
 published: true
+publishDate: 2014-03-24
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

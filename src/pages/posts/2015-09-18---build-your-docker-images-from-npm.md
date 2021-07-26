@@ -3,6 +3,7 @@ title: Build your docker images from npm
 description: Automate things with npm
 image: /wp-content/uploads/2015/09/docker1.png
 published: true
+publishDate: 2015-09-18
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

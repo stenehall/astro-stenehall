@@ -2,6 +2,7 @@
 title: Reasons for switching to Habari
 description: I've used Wordpress for years and year without problem, but it never really felt right. So when I came across Habari I decided to try it out.
 published: true
+publishDate: 2008-11-08
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

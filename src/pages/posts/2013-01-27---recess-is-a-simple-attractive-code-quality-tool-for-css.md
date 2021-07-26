@@ -1,6 +1,7 @@
 ---
 title: RECESS is a simple, attractive code quality tool for CSS
 published: true
+publishDate: 2013-01-27
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

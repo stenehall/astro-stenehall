@@ -2,6 +2,7 @@
 title: Ghost is almost ready!
 image: /wp-content/uploads/2014/03/table-bun.jpeg
 published: true
+publishDate: 2014-03-08
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

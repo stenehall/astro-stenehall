@@ -2,6 +2,7 @@
 title: Privatkopieringsskatten betalar för piratkopieringen?
 description: I skuggan av FRA och IPRED debatten har jag funderat kring skatten på lagringsmedia som faktiskt finns i sverige, 54% i extra privatkopieringsskatt betalar vi till exempel på tomma dvd skivor http://www.idg.se/2.1085/1.131367
 published: true
+publishDate: 2010-05-04
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

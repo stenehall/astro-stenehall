@@ -5,6 +5,7 @@ instagram_link:
   - https://instagram.com/p/9BDxfFJlnF/
 image: /wp-content/uploads/2015/10/14452520561.jpg
 published: true
+publishDate: 2015-10-19
 layout: '../../layouts/BlogPost.astro'
 category: instagram
 tags:

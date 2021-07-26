@@ -2,6 +2,7 @@
 title: Don't you just love xkcd?
 description: I just love this xkcd strip
 published: true
+publishDate: 2008-12-25
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

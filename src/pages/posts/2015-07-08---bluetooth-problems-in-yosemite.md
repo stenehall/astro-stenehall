@@ -3,6 +3,7 @@ title: Bluetooth problems in Yosemite
 description: A simple reset will solve the problem.
 image: /wp-content/uploads/2015/07/coffee-table2.jpeg
 published: true
+publishDate: 2015-07-08
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

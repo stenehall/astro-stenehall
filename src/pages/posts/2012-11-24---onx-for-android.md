@@ -2,6 +2,7 @@
 title: 'on{X} for android'
 description: I recently bought an Nexus 7 to play with and had to try one of the best products created by Microsoft, ever.
 published: true
+publishDate: 2012-11-24
 layout: '../../layouts/BlogPost.astro'
 category: code
 tags:

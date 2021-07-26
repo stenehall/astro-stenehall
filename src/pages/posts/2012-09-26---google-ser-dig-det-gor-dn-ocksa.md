@@ -2,6 +2,7 @@
 title: 'Google ser dig – Det gör DN också'
 description: I artikeln namnges banker, partier och myndigheter som använder Google Analytics (GA) och det lyfts fram hur otäckt det är.
 published: true
+publishDate: 2012-09-26
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

@@ -2,6 +2,7 @@
 title: Example markdown post
 description: Learning how to use @nuxt/content to create a blog
 published: false
+publishDate: 2021-01-22
 layout: '../../layouts/BlogPost.astro'
 img: coffee-break.png
 img-size:

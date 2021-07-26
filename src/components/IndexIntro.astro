@@ -5,19 +5,27 @@ import Section from './Section'
 // const jpeg = require('~/assets/stenehall.jpg?resize&sizes[]=300&sizes[]=640&sizes[]=1000')
 ---
 <Section data-color="body-intro" data-name="intro">
-  <div class="grid">
-    <div class="intro">
-      <p class="h2">Hi There!</p>
-      <div id="iam" class="iam">
-        <span class="">
-          <span class="i-am-johan h1">I'm </span>
-          <h1 class="i-am-johan h1 inline">Johan Stenehall</h1>
-        </span>
+  <div class="main-grid">
+    <div class="intro justify-evenly">
+      <div>
+        <p class="h2">Hi There!</p>
+        <div id="iam" class="iam">
+          <span class="">
+            <span class="i-am-johan h1">I'm </span>
+            <h1 class="i-am-johan h1 inline">Johan Stenehall</h1>
+          </span>
+        </div>
+        <p>
+          A developer building things, currently for Volvo Car Mobility (M)
+          creating their web.
+        </p>
       </div>
-      <p>
-        A developer building things, currently for Volvo Car Mobility (M)
-        creating their web.
-      </p>
+      <ol class="grid w-full grid-cols-4 grid-flow-col gap-4 list-inside list-decimal">
+        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#about-me">About</a></li>
+        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#stats">Stats</a></li>
+        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#skills">Skills</a></li>
+        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#work">Work</a></li>
+      </ol>
     </div>
     <picture class="photo">
       <source srcset="/stenehall.webp" type="image/webp" />
@@ -49,6 +57,18 @@ section {
   }
 }
 
+li::marker {
+  font-size: clamp(1rem, 6vw, 8rem);
+}
+
+li a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
 img {
   height: auto;
   width: auto;
@@ -66,7 +86,7 @@ img {
   font-size: inherit;
 }
 
-.grid {
+.main-grid {
   display: grid;
   gap: 1rem;
   grid-template-rows: min-content 1fr;
@@ -74,7 +94,7 @@ img {
 }
 
 @media (min-width: 640px) {
-  .grid {
+  .main-grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     grid-template-areas: 'photo intro';
@@ -85,7 +105,6 @@ img {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
   }
 
   .photo {

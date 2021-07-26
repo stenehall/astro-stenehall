@@ -4,9 +4,56 @@ const menu = [
   {name: "Home", permalink: "/"},
   {name: "Tags", permalink: "/tags"},
   {name: "Categories", permalink: "/categories"},
+  {name: "Archive", permalink: "/archive"},
   {name: "About", permalink: "/about"},
 ]
 ---
+<div class="nav">
+  <Logo />
+
+  <aside>
+    <!-- <LatestArticles :articles="articles" /> -->
+    <svg
+      id="menu"
+      width="24px"
+      viewBox="0 0 100 80"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        fill="transparent"
+        stroke="currentColor"
+        stroke-width="12"
+      >
+        <polyline class="top" points="10 10 50 10 10 40" />
+        <line x1="10" y1="40" x2="90" y2="40" />
+        <polyline class="bottom" points="90 70 50 70 10 40" />
+      </g>
+    </svg>
+    <nav>
+      <ol class="list-inside font-bold">
+        {menu.map((link, id) => (
+        <li class="list-decimal">
+          <a class="font-normal" href={link.permalink}>{link.name}</a>
+        </li>
+        ))}
+      </ol>
+    </nav>
+    <!-- <ColorMode /> -->
+    <div>
+      <h2>Johan Stenehall</h2>
+      <p>
+        A developer building things, currently for Volvo Car Mobility creating
+        their web. At work he mostly codes Vue, React and Elm but also some
+        Kotlin.
+      </p>
+    </div>
+  </aside>
+</div>
+
 <style lang="scss">
 
 aside {
@@ -36,7 +83,7 @@ aside {
   }
 }
 
-ul {
+ol {
   font-size: 2rem;
 }
 
@@ -94,49 +141,3 @@ svg {
 }
 
 </style>
-
-<div class="nav">
-  <Logo />
-
-  <aside>
-    <!-- <LatestArticles :articles="articles" /> -->
-    <svg
-      id="menu"
-      width="24px"
-      viewBox="0 0 100 80"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <g
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        fill="transparent"
-        stroke="currentColor"
-        stroke-width="12"
-      >
-        <polyline class="top" points="10 10 50 10 10 40" />
-        <line x1="10" y1="40" x2="90" y2="40" />
-        <polyline class="bottom" points="90 70 50 70 10 40" />
-      </g>
-    </svg>
-    <nav>
-      <ul class="list-inside font-bold">
-        {menu.map((link, id) => (
-        <li class="list-decimal">
-          <a class="font-normal" href={link.permalink}>{link.name}</a>
-        </li>
-        ))}
-      </ul>
-    </nav>
-    <!-- <ColorMode /> -->
-    <div>
-      <h2>Johan Stenehall</h2>
-      <p>
-        A developer building things, currently for Volvo Car Mobility creating
-        their web. At work he mostly codes Vue, React and Elm but also some
-        Kotlin.
-      </p>
-    </div>
-  </aside>
-</div>

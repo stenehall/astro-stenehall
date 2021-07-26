@@ -2,6 +2,7 @@
 title: The gummi bears only on 8th place
 description: The author of this The 10 Best 80s Cartoon Theme Songs cant have heard the gummi bears theme song in danish. If he had it would definitely been first, given that he speaks swedish.
 published: true
+publishDate: 2008-12-07
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

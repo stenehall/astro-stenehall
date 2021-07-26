@@ -1,6 +1,7 @@
 ---
 title: Sites that show of
 published: true
+publishDate: 2013-01-28
 layout: '../../layouts/BlogPost.astro'
 category: tip
 tags:

@@ -2,6 +2,7 @@
 title: My currenct Sublime Text 3 configuration
 description: Sublime Text 3, with Phoenix Dark, Base16 color scheme and Source Code Pro.
 published: true
+publishDate: 2013-02-11
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

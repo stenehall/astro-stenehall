@@ -2,6 +2,7 @@
 title: Top 4 places on Google
 description: I just did some google analytics research. I'm using it on this page to track the non-existing visitors.
 published: true
+publishDate: 2008-11-09
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:

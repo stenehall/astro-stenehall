@@ -3,6 +3,7 @@ title: My first Blog Post
 description: Nunc cubilia pellentesque curabitur integer vitae tortor lectus, tincidunt at hendrerit.
 alt: my first blog post
 published: false
+publishDate: 2021-02-03
 layout: '../../layouts/BlogPost.astro'
 category: Foo bar
 tags: 

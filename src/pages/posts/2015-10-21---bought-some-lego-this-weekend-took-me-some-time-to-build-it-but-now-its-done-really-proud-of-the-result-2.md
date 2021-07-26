@@ -9,6 +9,7 @@ instagram_embed_code:
     <iframe src="https://instagram.com/p/9GnVmvJlpt/embed/" width="612" height="710" frameborder="0" scrolling="no" allowtransparency="true" class="insta-image-embed"></iframe>
 image: /wp-content/uploads/2015/10/14454384751.jpg
 published: true
+publishDate: 2015-10-21
 layout: '../../layouts/BlogPost.astro'
 category: instagram
 tags:

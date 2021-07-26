@@ -2,6 +2,7 @@
 title: Urusel på att blogga
 description: Jag är verkligen en urusel bloggare. Jag väntar konstant på något tillräckligt intressant och unikt att blogga om. Vad finns det för mening med att blogga om ipred, när google redan ger 800 000+ träffar.
 published: true
+publishDate: 2008-12-01
 layout: '../../layouts/BlogPost.astro'
 category: article
 tags:
