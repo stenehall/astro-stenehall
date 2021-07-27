@@ -5,7 +5,7 @@ import Work from './Work'
 import WorkIcon from './WorkIcon'
 ---
 <Section class="work" id="work" data-transform data-color="work" data-name="work">
-  <div class="grid">
+  <div>
     <Intro class="intro">
       <h2 class="">Work?</h2>
       <p>
@@ -20,6 +20,7 @@ import WorkIcon from './WorkIcon'
         link="https://m.co"
         class="m"
         logo="m"
+        index={1}
         logoWidth="124px"
         logoHeight="100px"
         start="2018-04-01"
@@ -47,6 +48,7 @@ import WorkIcon from './WorkIcon'
         link="https://izettle.com"
         class="izettle"
         logo="izettle"
+        index={2}
         logoWidth="300px"
         logoHeight="83px"
         start="2016-06-01"
@@ -82,6 +84,7 @@ import WorkIcon from './WorkIcon'
         start="2014-06-01"
         end="2016-06-01"
         logo="narrative"
+        index={3}
         logoWidth="32px"
         logoHeight="44px"
         setActive="setActive(2)"
@@ -120,6 +123,7 @@ import WorkIcon from './WorkIcon'
         start="2010-07-01"
         end="2014-06-01"
         logo="noc"
+        index={4}
         logoWidth="90px"
         logoHeight="69px"
         setActive="setActive(3)"
@@ -163,13 +167,6 @@ import WorkIcon from './WorkIcon'
   background: #ccc;
 }
 
-.body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content;
-  gap: 3rem;
-}
-
 .grid {
   gap: 3rem;
   display: grid;
@@ -181,6 +178,10 @@ import WorkIcon from './WorkIcon'
   margin-top: 3rem;
   display: flex;
   gap: 2rem;
+}
+
+.body {
+  margin-top: 2rem;
 }
 
 @media only screen and (min-width: 750px) {

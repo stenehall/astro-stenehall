@@ -1,20 +1,17 @@
 ---
 export interface Props {
   title: string;
-  className: string
+  className: string;
+  maxWidth?: boolean;
 }
-const {title, className} = Astro.props;
+const {title, className, maxWidth} = Astro.props;
+console.log("maxWidth", maxWidth)
 ---
 <div class={`block ${className ? className : ''}`}>
   <div>
-    {title && <h3>{title}</h3>}
-    <p>
+    {title && <h3 class={`${maxWidth === false ? '' : 'max-w-2xl'}`}>{title}</h3>}
+    <p class={`${maxWidth === false ? '': 'max-w-2xl'}`}>
       <slot />
     </p>
   </div>
 </div>
-<style lang="scss">
-.block div > * {
-  max-width: 640px;
-}
-</style>

@@ -8,9 +8,10 @@ export interface Props {
   logo: string,
   logoWidth: string,
   logoHeight: string,
+  index: number
 }
 
-const { title, logo, logoWidth, logoHeight, link, start, end, techy, isActive } = Astro.props;
+const { title, logo, logoWidth, logoHeight, link, start, end, techy, isActive, index } = Astro.props;
 
 const readableDate = (dateStr: string) => {
   if (dateStr) {
@@ -22,21 +23,21 @@ const readableDate = (dateStr: string) => {
 }
 
 ---
-<div class="p-8 bg-gray-50 rounded-3xl">
-  <div>
-    <img
-      class="cursor-pointer"
-      height={logoHeight}
-      width={logoWidth}
-      data-src={`/icons/${logo}.svg`}
-      alt={title}
-    />
-    <p class="time my-2">
-      <time datetime={start}>{ readableDate(start) }</time> -
-      <time datetime={end}>{ readableDate(end) }</time>
-    </p>
+<div class={`work ${index % 2 ? 'odd' : 'even'}`}>
+  <!-- <img
+    class="cursor-pointer"
+    height={logoHeight}
+    width={logoWidth}
+    data-src={`/icons/${logo}.svg`}
+    alt={title}
+  /> -->
+  <div class="date">
+    <time datetime={start}>{ readableDate(start) }</time> -
+    <time datetime={end}>{ readableDate(end) }</time>
+  </div>
+  <div class="desc">
+    <h3><a href={link} title={title}>{ title }</a></h3>
     <slot />
-    <a href={link} title="title">{ link }</a>
     <ul class="mt-2">
       <li><strong>Techy words:</strong></li>
       {techy.map((item, id) => <li key={id}>
@@ -45,14 +46,66 @@ const readableDate = (dateStr: string) => {
     </ul>
   </div>
 </div>
-<style>
+<style lang="scss">
 img {
   height: 2em;
   width: auto;
 }
 
+.work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "date desc";
+}
+
+.work.even {
+  grid-template-areas: "desc date";
+}
+
+.date {
+  padding: 3rem 1rem 0;
+  border-right: 3px solid blue;
+  text-align: right;
+  position: relative;
+  grid-area: date;
+}
+
+.even {
+  .date {
+    border: none;
+    text-align: left;
+
+    &::after {
+      left: -7px;
+    }
+  }
+
+  .desc {
+    border-right: 3px solid blue;
+    text-align: right;
+  }
+}
+
+.date::after {
+  box-shadow: 0 0 0 4px #004ffc;
+  right: -7px;
+  background: #fff;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: calc(3rem + 11px);
+  position: absolute;
+}
+
+.desc {
+  padding: 3rem 1rem 0;
+  grid-area: desc;
+}
+
 time {
   font-size: 0.8rem;
+  line-height: 2rem;
   font-style: italic;
 }
 img {
