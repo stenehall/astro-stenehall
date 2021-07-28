@@ -23,7 +23,7 @@ const readableDate = (dateStr: string) => {
 }
 
 ---
-<div class={`work ${index % 2 ? 'odd' : 'even'}`}>
+<div class={`work ${index % 2 ? 'odd' : 'even'}`} data-fade-in>
   <!-- <img
     class="cursor-pointer"
     height={logoHeight}
@@ -54,36 +54,23 @@ img {
 
 .work {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50px 1fr;
   grid-template-areas: "date desc";
 }
 
-.work.even {
-  grid-template-areas: "desc date";
-}
-
 .date {
-  padding: 3rem 1rem 0;
+  padding: 5rem 1rem 0 0;
   border-right: 3px solid blue;
   text-align: right;
   position: relative;
   grid-area: date;
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
 }
 
-.even {
-  .date {
-    border: none;
-    text-align: left;
-
-    &::after {
-      left: -7px;
-    }
-  }
-
-  .desc {
-    border-right: 3px solid blue;
-    text-align: right;
-  }
+.desc {
+  padding: 1.5rem 0 0 1rem;
+  grid-area: desc;
 }
 
 .date::after {
@@ -94,13 +81,46 @@ img {
   height: 11px;
   width: 11px;
   content: "";
-  top: calc(3rem + 11px);
+  top: calc(1.5rem + 11px);
   position: absolute;
 }
 
-.desc {
-  padding: 3rem 1rem 0;
-  grid-area: desc;
+@media only screen and (min-width: 750px) {
+  .work {
+     grid-template-columns: 1fr 1fr; 
+  }
+
+  .date {
+    padding: 3rem 1rem 0;
+    writing-mode: initial;
+  }
+
+  .desc {
+    padding: 3rem 1rem 0;
+    grid-area: desc;
+  }
+
+  .date::after {
+    top: calc(3rem + 11px);
+  }
+
+  .even {
+     grid-template-areas: "desc date";
+    
+    .date {
+      border: none;
+      text-align: left;
+
+      &::after {
+        left: -7px;
+      }
+    }
+
+    .desc {
+      border-right: 3px solid blue;
+      text-align: right;
+    }
+  }
 }
 
 time {

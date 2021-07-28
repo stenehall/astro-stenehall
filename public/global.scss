@@ -45,6 +45,10 @@
     background: #fff;
   }
 
+  a:hover {
+    @apply text-primary;
+  }
+
   [data-aos="fade-up"] {
     transform: translate3d(0,100px,0);
   }
@@ -72,6 +76,20 @@ $areas: intro, server, frontend, databases, design, backend, tools, rest;
   .#{$area} {
     grid-area: $area;
   }
+}
+
+
+[data-fade-in] {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition-property: opacity,transform;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(.25,.46,.45,.94);
+}
+
+[data-fade-in].visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 em {
