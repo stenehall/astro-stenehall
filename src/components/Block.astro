@@ -5,7 +5,6 @@ export interface Props {
   maxWidth?: boolean;
 }
 const {title, className, maxWidth} = Astro.props;
-console.log("maxWidth", maxWidth)
 ---
 <div class={`block ${className ? className : ''}`}>
   <div>

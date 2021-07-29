@@ -21,15 +21,17 @@ import Section from './Section'
         </p>
       </div>
       <ol class="grid w-full grid-cols-4 grid-flow-col gap-4 list-inside list-decimal">
-        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#about-me">About</a></li>
-        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#skills">Skills</a></li>
-        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#stats">Stats</a></li>
-        <li class="pt-4 transform relative duration-75 hover:scale-125 hover:text-primary"><a class="text-lg text-primary" href="#work">Work</a></li>
+        <li><a class="text-lg text-primary" href="#about-me">About</a></li>
+        <li><a class="text-lg text-primary" href="#skills">Skills</a></li>
+        <li><a class="text-lg text-primary" href="#stats">Stats</a></li>
+        <li><a class="text-lg text-primary" href="#work">Work</a></li>
       </ol>
     </div>
     <picture class="photo">
-      <source srcset="/stenehall.webp" type="image/webp" />
-      <source srcset="/stenehall.jpeg" type="image/jpeg" />
+      <source srcset="/stenehall_mobile.webp" type="image/webp" />
+      <source srcset="/stenehall_mobile.jpeg" type="image/jpeg" />
+      <source media="(min-width: 480px)" srcset="/stenehall.webp" type="image/webp" />
+      <source media="(min-width: 480px)" srcset="/stenehall.jpeg" type="image/jpeg" />
       <img
         class="shadow-md rounded"
         width="640"
@@ -54,6 +56,18 @@ section {
     max-width: 90rem;
     justify-self: center;
     width: 100%;
+  }
+}
+
+li {
+  @apply pt-4 relative hover:text-primary;
+  will-change: transform;
+}
+
+
+@media (hover: hover) {
+  li {
+    @apply transform duration-75 hover:scale-125;
   }
 }
 
