@@ -14,30 +14,53 @@ const { title, description, permalink } = Astro.props;
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
+
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
+<meta name="author" content="https://stenehall.se">
+<meta name="publisher" content="https://stenehall.se">
+<meta name="apple-mobile-web-app-title" content="Johan Stenehall, Web developer">
+<meta name="theme-color" content="#fff">
+
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://astro.build/social.jpg?v=1" />
+<meta property="og:url" content={permalink} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/stenehall.jpg" />
+<meta property="og:site_name" content="Johan Stenehall, Web developer">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@stenehall">
+<meta property="twitter:creator" content="@stenehall">
 <meta property="twitter:url" content={permalink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content="https://astro.build/social.jpg?v=1" />
+<meta property="twitter:image" content="/stenehall.jpg" />
+
+<!-- https://json-ld.org -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Stockholm",
+    "addressCountry": "Sweden"
+  },
+  "email": "stenehall@gmail.com",
+  "jobTitle": "Web developer",
+  "name": "Johan Stenehall",
+  "url": "https://stenehall.se"
+}</script>
 
 <!-- Fonts -->
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/"><!-- needed? -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Taviraj:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">  -->
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
 <link rel="sitemap" href="/sitemap.xml" />
-
 <link rel="stylesheet" href="/global.css" />
 <script src="/main.js" defer></script>
