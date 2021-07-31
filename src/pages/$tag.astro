@@ -7,7 +7,7 @@ const { collection } = Astro.props;
 const permalink = Astro.request.url.pathname
 
 export async function createCollection() {
-  const allPosts = Astro.fetchContent('./posts/*.md');
+  const allPosts = Astro.fetchContent('./articles/*.md');
 
   const tags = {}
   allPosts.forEach(post => {

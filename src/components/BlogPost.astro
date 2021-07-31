@@ -10,7 +10,7 @@ const { title, publishDate, heroImage, tags, category } = Astro.props.post;
 const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}</a>))).join(', ')
 ---
 
-<article>
+<article class="article">
   <header>
     {heroImage && <img class="hero-image" loading="lazy" src={`/assets/${heroImage}`} />}
     <div class={`prose mx-16 max-w-screen-md mx-auto pt-12 ${!heroImage && 'mt-48'}`}>

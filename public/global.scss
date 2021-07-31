@@ -37,6 +37,12 @@
     @apply mb-4;
   }
 
+  .article {
+    h1, h2, h3, h4 {
+      @apply font-serif;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
