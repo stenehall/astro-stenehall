@@ -3,7 +3,7 @@ import Excerpt from '../components/Excerpt.astro';
 import Main from '../layouts/Main.astro'
 import slugify from 'slugify'
 
-const { collection } = Astro.props;
+const {name, data} = Astro.props
 const permalink = Astro.request.url.pathname
 
 export async function createCollection() {
@@ -18,20 +18,21 @@ export async function createCollection() {
   })
 
   return {
-    routes: Object.keys(categories).map((category, i) => (
-      {category, posts: categories[category]}
-    )),
-    permalink: ({ params }) => `/category/${params?.category}`,
-    async data({ params }) {
-      return params?.category ? categories[params?.category] : {};
+    route: `/category/:name`,
+    paths() {
+      return Object.keys(categories).map((category, i) => (
+        {params: {name: category}}
+      ))
     },
-    pageSize: Infinity,
+    async props({ params }) {
+      return params?.name ? {name: params.name, data: categories[params.name]} : {};
+    },
   };
 }
 ---
-<Main title={`${collection.params?.category}`} description={`All blog posts about ${collection.params?.category}`} permalink={permalink}>
-  <h1>All posts categoried as: {collection.params?.category}</h1>
-  {collection.data.map((post, id) => 
+<Main title={`${name}`} description={`All blog posts about ${name}`} permalink={permalink}>
+  <h1>All posts categoried as: {name}</h1>
+  {data.map((post, id) => 
     <Excerpt post={post} expanded={id==0} />
   )}
 </Main>

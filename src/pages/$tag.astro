@@ -3,7 +3,7 @@ import Excerpt from '../components/Excerpt.astro';
 import Main from '../layouts/Main.astro'
 import slugify from 'slugify'
 
-const { collection } = Astro.props;
+const {name, data} = Astro.props
 const permalink = Astro.request.url.pathname
 
 export async function createCollection() {
@@ -18,20 +18,21 @@ export async function createCollection() {
   })
 
   return {
-    routes: Object.keys(tags).map((tag, i) => (
-      {tag, posts: tags[tag]}
-    )),
-    permalink: ({ params }) => `/tag/${params?.tag}`,
-    async data({ params }) {
-      return params?.tag ? tags[params?.tag] : {};
+    route: `/tag/:name`,
+    paths() {
+      return Object.keys(tags).map((tag, i) => (
+        {params: {name: tag}}
+      ))
     },
-    pageSize: Infinity,
+    async props({ params }) {
+      return params?.name ? {name: params.name, data: tags[params.name]} : {};
+    },
   };
 }
 ---
-<Main title={`${collection.params?.tag}`} description={`All blog posts about ${collection.params?.tag}`} permalink={permalink}>
-  <h1>All posts tagged as: {collection.params?.tag}</h1>
-  {collection.data.map((post, id) => 
+<Main title={`${name}`} description={`All blog posts about ${name}`} permalink={permalink}>
+  <h1>All posts tagged as: {name}</h1>
+  {data.map((post, id) => 
     <Excerpt post={post} expanded={id==0} />
   )}
 </Main>
