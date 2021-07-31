@@ -37,7 +37,12 @@ const readableDate = (dateStr: string) => {
     <time datetime={end}>{ readableDate(end) }</time>
   </div>
   <div class="desc">
-    <h3><a href={link} title={title}>{ title }</a></h3>
+    <h3>
+      {link ?
+        <a href={link} title={title}>{ title }</a>:
+        {title}
+      }
+        </h3>
     <slot />
     {techy && <ul class="mt-2">
       <li><strong>Techy words:</strong></li>
