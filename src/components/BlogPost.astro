@@ -10,18 +10,18 @@ const { title, publishDate, heroImage, tags, category } = Astro.props.post;
 const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}</a>))).join(', ')
 ---
 
-<article class="article mx-8">
+<article class="article">
   <header>
     {heroImage && <img class="hero-image" loading="lazy" src={`/assets/${heroImage}`} />}
-    <div class={`prose mx-16 max-w-screen-md mx-auto pt-12 ${!heroImage && 'md:mt-48 mt-20'}`}>
+    <div class={`${!heroImage && 'md:mt-48 mt-20'}`}>
       <h1>{title}</h1>
       <p><span class="mt-1 text-sm">By <strong>Johan Stenehall</strong> / <time datetime={dateIso(publishDate)}>{dateStr(publishDate)}</time></span>
     </div>
   </header>
-  <main class="prose mx-16 max-w-screen-md mx-auto pb-12">
+  <main>
     <slot />
   </main>
-  <footer class="text-sm pb-12 flex flex-col items-center">
+  <footer>
     <div>
       <p class="text-sm">This was filled under <a href={`/category/${category}`} class="" title={category}>{category}</a>
       with some tags: {tagsStr}
@@ -36,34 +36,35 @@ const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}
 }
 
 .hero-image {
-  width: 100vw;
-  object-fit: cover;
-  object-position: center;
+  @apply w-screen object-cover object-center relative left-0;
   max-width: 1280px;
   max-height: 50vh;
-  position: relative;
-  left: 0;
-  margin: 0;
+}
+
+header div {
+  @apply prose mx-16 max-w-screen-md mx-auto pt-12;
+}
+
+article {
+  @apply mx-8;
+}
+
+main {
+  @apply prose mx-16 max-w-screen-md mx-auto pb-12;
+}
+
+footer {
+  @apply text-sm pb-12 flex flex-col items-center;
 }
 
 footer::before {
     content: "";
-    width: 30vw;
-    max-width: 200px;
-    height: 10px;
-    display: block;
-    border-top: 1px solid currentColor;
-    margin: 0 auto 3rem;
+    @apply w-4/12 max-w-xs mx-auto mb-12 block border-current border-t;
 }
 
 article::after {
     content: "";
-    width: 30vw;
-    max-width: 200px;
-    height: 10px;
-    display: block;
-    border-bottom: 1px solid currentColor;
-    margin: 0 auto 2em;
+    @apply w-4/12 max-w-xs mx-auto mb-8 block border-current border-b;
 }
 
 @media (max-width: 50em) {

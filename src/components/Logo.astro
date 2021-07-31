@@ -52,20 +52,17 @@
 
 <style lang="scss">
 a {
-  position: fixed;
+  @apply fixed left-8 z-10 mix-blend-difference;
   top: calc(3rem - 12px);
-  left: 2rem;
-  z-index: 10;
-  mix-blend-mode: difference;
 }
 
 @media (min-width: 640px) {
   a {
-    left: 3rem;
+    @apply left-12;
   }
-  svg {
-    opacity: 1;
-    transform: scale(1);
-  }
+  // svg {
+  //   opacity: 1;
+  //   transform: scale(1);
+  // }
 }
 </style>

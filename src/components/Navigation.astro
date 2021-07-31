@@ -57,34 +57,24 @@ const menu = [
 <style lang="scss">
 
 aside {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
+  @apply fixed flex z-50 top-0 left-0 h-screen w-screen justify-between items-start flex-col-reverse pointer-events-none;
   clip-path: circle(20px at calc(100vw - 3rem) calc(100vh - 3rem));
   background: linear-gradient(45deg, #30f0e0, #8840bb, #ee13a0, #f2ba10);
   transition: clip-path 0.5s;
-  pointer-events: none;
   color: #fff;
   padding: 10rem 2rem 3rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column-reverse;
 
   a {
     color: #fff;
   }
 
   div {
-    max-width: 30rem;
+    @appl max-w-lg;
   }
 }
 
 ol {
-  font-size: 2rem;
+  @apply text-4xl;
 }
 
 .visible {

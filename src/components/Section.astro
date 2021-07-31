@@ -17,23 +17,18 @@ const { title, id, flex } = Astro.props;
 </section>
 <style lang="scss">
 section {
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  padding: 2rem;
+  @apply grid content-center justify-center min-h-screen p-8;
   grid-template-columns: 1fr;
   scroll-snap-align: start;
 
   > div {
-    max-width: 90rem;
-    justify-self: center;
-    width: 100%;
+    @apply max-w-7xl justify-self-center w-full;
+    // max-width: 90rem;
   }
 }
 @media (min-width: 800px) {
   section {
-    padding: 4rem;
+    @apply p-16;
   }
 }
 </style>

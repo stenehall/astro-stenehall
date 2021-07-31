@@ -2,16 +2,17 @@
 export interface Props {
   title: string,
   link: string,
+  className?: string,
   start: string,
-  end: string,
-  techy: array,
-  logo: string,
-  logoWidth: string,
-  logoHeight: string,
+  end?: string,
+  techy?: array,
+  logo?: string,
+  logoWidth?: string,
+  logoHeight?: string,
   index: number
 }
 
-const { title, logo, logoWidth, logoHeight, link, start, end, techy, isActive, index } = Astro.props;
+const { title, className, logo, logoWidth, logoHeight, link, start, end, techy, isActive, index } = Astro.props;
 
 const readableDate = (dateStr: string) => {
   if (dateStr) {
@@ -23,7 +24,7 @@ const readableDate = (dateStr: string) => {
 }
 
 ---
-<div class={`work ${index % 2 ? 'odd' : 'even'}`} data-fade-in>
+<div class={`work ${className ? className: ''} ${index % 2 ? 'odd' : 'even'}`} data-fade-in>
   <!-- <img
     class="cursor-pointer"
     height={logoHeight}
@@ -38,12 +39,12 @@ const readableDate = (dateStr: string) => {
   <div class="desc">
     <h3><a href={link} title={title}>{ title }</a></h3>
     <slot />
-    <ul class="mt-2">
+    {techy && <ul class="mt-2">
       <li><strong>Techy words:</strong></li>
       {techy.map((item, id) => <li key={id}>
         { item }
       </li>)}
-    </ul>
+    </ul>}
   </div>
 </div>
 <style lang="scss">
@@ -120,6 +121,46 @@ img {
       border-right: 3px solid blue;
       text-align: right;
     }
+  }
+}
+
+.izettle {
+  .desc, .date  {
+    border-color: #192550;
+  }
+  
+  .date::after {
+    box-shadow: 0 0 0 4px #192550;
+  }
+}
+
+.narrative {
+  .desc, .date  {
+    border-color: #e26060;
+  }
+
+  .date::after {
+    box-shadow: 0 0 0 4px #e26060;
+  }
+}
+
+.noc {
+  .desc, .date  {
+    border-color: #cee271;
+  }
+
+  .date::after {
+    box-shadow: 0 0 0 4px #cee271;
+  }
+}
+
+.m {
+  .desc, .date  {
+    border-color: #2ba4a6;
+  }
+
+  .date::after {
+    box-shadow: 0 0 0 4px #2ba4a6;
   }
 }
 

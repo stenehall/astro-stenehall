@@ -35,44 +35,28 @@ import Section from './Section'
 
 <style lang="scss">
 ul {
-  display: grid;
+  @apply grid p-0;
   grid-template-columns: repeat(18, minmax(0, 1fr));
   grid-template-rows: repeat(4, minmax(0, 1fr));
-  list-style: none;
-  padding: 0;
 
   li {
+    @apply relative;
     border: 2px solid #ccc;
-    position: relative;
     margin: 0 -2px -2px 0;
 
     &::after {
+      @apply inline-block h-0 w-px;
       content: '';
-      display: inline-block;
-      width: 1px;
-      height: 0;
       padding-bottom: 100%;
     }
 
     span {
-      position: absolute;
-      padding: 1rem;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-flow: column;
+      @apply absolute flex items-center justify-center flex-col p-4 top-0 left-0 w-full h-full;
     }
   }
 
   strong {
-    display: block;
-    font-size: 2rem;
-    line-height: 1;
-    margin-bottom: 0.5rem;
+    @apply block text-2xl leading-none mb-2;
     // color: var(--color-text-offset);
   }
 
