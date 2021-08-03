@@ -22,6 +22,11 @@
 // }
 
 @layer base {
+  :root {
+    --section-stats-background: #ffb502;
+    --section-stats-color: #000;
+  }
+  
   h1 {
     @apply text-5xl;
     @apply mb-8;
@@ -54,6 +59,28 @@
 
   a:hover {
     @apply text-primary;
+  }
+
+  .index {
+    .navigation {
+      max-width: 80rem;
+    }
+    
+    aside > div > div {
+      max-width: 80rem;
+      margin-bottom: 4rem;
+    }
+  }
+  
+  .blog {
+    .navigation {
+      max-width: 65ch;
+    }
+    
+    aside > div > div {
+      max-width: 65ch;
+      margin-bottom: 4rem;
+    }
   }
 }
 

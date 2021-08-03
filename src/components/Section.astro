@@ -3,11 +3,12 @@ export interface Props {
   title: string;
   flex: string;
   id: string
+  className?: string
 }
 
-const { title, id, flex } = Astro.props;
+const { title, id, flex, className } = Astro.props;
 ---
-<section id={`${id ? id : ''}`}>
+<section id={`${id ? id : ''}`} class={`${className ? className : ''}`}>
   <div class={`${flex ? 'items-stretch flex' : ''}`}>
     {title && <h2 class="title">
       {title}
@@ -30,5 +31,10 @@ section {
   section {
     @apply p-16;
   }
+}
+
+.stats {
+  background: var(--section-stats-background);
+  color: var(--section-stats-color);
 }
 </style>

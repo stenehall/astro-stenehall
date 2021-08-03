@@ -42,15 +42,16 @@ const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}
 }
 
 header div {
-  @apply prose mx-16 max-w-screen-md mx-auto pt-12;
+  @apply prose mx-16 mx-auto pt-12;
 }
 
 article {
   @apply mx-8;
+  overflow: hidden;
 }
 
 main {
-  @apply prose mx-16 max-w-screen-md mx-auto pb-12;
+  @apply prose mx-16 mx-auto pb-12;
 }
 
 footer {

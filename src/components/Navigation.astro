@@ -9,67 +9,86 @@ const menu = [
 ]
 ---
 <div class="nav">
-  <Logo />
+  <div>
+    <Logo />
 
-  <aside>
-    <!-- <LatestArticles :articles="articles" /> -->
-    <svg
-      id="menu"
-      width="24px"
-      viewBox="0 0 100 80"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <g
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        fill="transparent"
-        stroke="currentColor"
-        stroke-width="12"
-      >
-        <polyline class="top" points="10 10 50 10 10 40" />
-        <line x1="10" y1="40" x2="90" y2="40" />
-        <polyline class="bottom" points="90 70 50 70 10 40" />
-      </g>
-    </svg>
-    <nav>
-      <ol class="list-inside font-bold">
-        {menu.map((link, id) => (
-        <li class="list-decimal">
-          <a class="font-normal" href={link.permalink}>{link.name}</a>
-        </li>
-        ))}
-      </ol>
-    </nav>
-    <!-- <ColorMode /> -->
-    <div>
-      <h2>A web developer</h2>
-      <p>
-        A web developer building things, currently for Volvo Car Mobility creating
-        their web. At work he mostly codes Vue, React and Elm but also some
-        Kotlin.
-      </p>
-    </div>
-  </aside>
+    <aside>
+       <svg
+          id="menu"
+          width="24px"
+          viewBox="0 0 100 80"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            fill="transparent"
+            stroke="#fff"
+            stroke-width="12"
+          >
+            <polyline class="top" points="10 10 50 10 10 40" />
+            <line x1="10" y1="40" x2="90" y2="40" />
+            <polyline class="bottom" points="90 70 50 70 10 40" />
+          </g>
+        </svg>
+      <div class="mx-auto relative">
+        <!-- <LatestArticles :articles="articles" /> -->
+        <div class="mx-auto ">
+          <nav>
+            <ol class="list-inside font-bold">
+              {menu.map((link, id) => (
+              <li class="list-decimal">
+                <a class="font-normal" href={link.permalink}>{link.name}</a>
+              </li>
+              ))}
+            </ol>
+          </nav>
+          <!-- <ColorMode /> -->
+          <div>
+            <h2 class="mt-8 mb-2">A web developer</h2>
+            <p>
+              A web developer building things, currently for Volvo Car Mobility creating
+              their web. At work he mostly codes Vue, React and Elm but also some
+              Kotlin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 </div>
 
 <style lang="scss">
+.nav {
+  > div {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+}
+
 
 aside {
-  @apply fixed flex z-50 top-0 left-0 h-screen w-screen justify-between items-start flex-col-reverse pointer-events-none;
+  position: relative;
   clip-path: circle(20px at calc(100vw - 3rem) calc(100vh - 3rem));
-  background: linear-gradient(45deg, #30f0e0, #8840bb, #ee13a0, #f2ba10);
   transition: clip-path 0.5s;
   color: #fff;
-  padding: 10rem 2rem 3rem 2rem;
+  outline: 1px solid blue;
+  z-index: 90
 
   a {
     color: #fff;
   }
 
-  div {
-    @appl max-w-lg;
+  > div {
+    @apply fixed flex z-50 top-0 left-0 h-screen w-screen justify-between items-start flex-col-reverse;
+    background: linear-gradient(45deg, #30f0e0, #8840bb, #ee13a0, #f2ba10);
+    max-width: 100vw;
+
+    > div {
+      @appl max-w-lg;
+    }
   }
 }
 
@@ -78,7 +97,7 @@ ol {
 }
 
 .visible {
-  clip-path: circle(200% at calc(100vw - 3rem) calc(100vh - 3rem));
+  clip-path: circle(2000% at calc(100vw - 3rem) calc(100vh - 3rem));
   pointer-events: all;
 
   svg {
@@ -96,12 +115,12 @@ ol {
 
 @media (min-width: 640px) {
   aside {
-    clip-path: circle(20px at calc(100vw - 3rem) calc(4rem));
+    clip-path: content-box circle(20px at calc(100% - 1rem) calc(4rem));
     flex-direction: column;
   }
 
   .visible {
-    clip-path: circle(200% at calc(100vw - 3rem) calc(4rem));
+    clip-path: content-box circle(2000% at calc(100% - 1rem) calc(4rem));
 
     svg {
       transform: rotate(90deg);
@@ -110,12 +129,13 @@ ol {
 }
 
 svg {
-  position: fixed;
-  right: calc(3rem - 12px);
+  position: absolute;
+  right: calc(1rem - 12px);
   bottom: calc(3rem - 10px);
   pointer-events: all;
   cursor: pointer;
   transition: transform 0.2s;
+  z-index: 100;
 
   polyline {
     stroke-dasharray: 40px 300px;
@@ -124,7 +144,7 @@ svg {
   }
 
   @media (min-width: 640px) {
-    right: calc(3rem - 12px);
+    right: calc(1rem - 12px);
     top: calc(4rem - 10px);
     bottom: auto;
   }
