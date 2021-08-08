@@ -1,3 +1,5 @@
+@import "fonts";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +28,15 @@
     --section-stats-background: #ffb502;
     --section-stats-color: #000;
   }
-  
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans;
+  }
+
   h1 {
     @apply text-5xl;
     @apply mb-8;
@@ -43,8 +53,11 @@
   }
 
   .article {
-    h1, h2, h3, h4 {
-      @apply font-serif;
+    h1,
+    h2,
+    h3,
+    h4 {
+      @apply font-sans;
     }
   }
 
@@ -53,8 +66,11 @@
     scroll-snap-type: y proximity;
   }
 
-  html, body {
+  html,
+  body {
     background: #fff;
+
+    @apply font-serif;
   }
 
   a:hover {
@@ -62,13 +78,17 @@
   }
 
   .blog {
-    .main, .main aside, .main aside > div > div  {
+    .main,
+    aside,
+    aside > div > div {
       max-width: 65ch;
     }
   }
 
   .index {
-    .main, .main aside, .main aside > div > div  {
+    .main,
+    aside,
+    aside > div > div {
       max-width: 80rem;
     }
   }
@@ -78,19 +98,19 @@
   //     max-width: calc(80rem + 8rem);
   //     padding: 0 4rem;
   //   }
-    
+
   //   aside > div > div {
   //     max-width: 80rem;
   //     margin-bottom: 4rem;
   //   }
   // }
-  
+
   // .blog {
   //   .navigation {
   //     max-width: calc(65ch + 4rem);
   //     padding: 0 2rem;
   //   }
-    
+
   //   aside > div > div {
   //     max-width: 65ch;
   //     margin-bottom: 4rem;
@@ -99,9 +119,11 @@
 }
 
 @layer components {
-  p a, .prose a {
+  p a,
+  .prose a {
     text-decoration: none !important;
     border-bottom: 1px solid black;
+
     @apply border-primary;
     @apply transition-colors;
     @apply duration-500;
@@ -123,9 +145,9 @@
 [data-fade-in] {
   opacity: 0;
   transform: translate3d(0, 100px, 0);
-  transition-property: opacity,transform;
-  transition-duration: .8s;
-  transition-timing-function: cubic-bezier(.25,.46,.45,.94);
+  transition-property: opacity, transform;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
 }
 
@@ -153,123 +175,163 @@ em[data-icon]::after {
   em[data-icon="js"]::after {
     background: url("/devicon/icons/javascript/javascript-original.svg");
   }
+
   em[data-icon="css3"]::after {
     background: url("/devicon/icons/css3/css3-original.svg");
   }
+
   em[data-icon="typescript"]::after {
     background: url("/devicon/icons/typescript/typescript-original.svg");
   }
+
   em[data-icon="html5"]::after {
     background: url("/devicon/icons/html5/html5-original.svg");
   }
+
   em[data-icon="babel"]::after {
     background: url("/devicon/icons/babel/babel-original.svg");
   }
+
   em[data-icon="webpack"]::after {
     background: url("/devicon/icons/webpack/webpack-original.svg");
   }
+
   em[data-icon="scss"]::after {
     background: url("/devicon/icons/sass/sass-original.svg");
   }
+
   em[data-icon="react"]::after {
     background: url("/devicon/icons/react/react-original.svg");
   }
+
   em[data-icon="node"]::after {
     background: url("/devicon/icons/nodejs/nodejs-original.svg");
   }
+
   em[data-icon="ruby"]::after {
     background: url("/devicon/icons/ruby/ruby-original.svg");
   }
+
   em[data-icon="rails"]::after {
     background: url("/devicon/icons/rails/rails-plain.svg");
   }
+
   em[data-icon="php"]::after {
     background: url("/devicon/icons/php/php-plain.svg");
   }
+
   em[data-icon="python"]::after {
     background: url("/devicon/icons/python/python-original.svg");
   }
+
   em[data-icon="java"]::after {
     background: url("/devicon/icons/java/java-original.svg");
   }
+
   em[data-icon="docker"]::after {
     background: url("/devicon/icons/docker/docker-original.svg");
   }
+
   em[data-icon="mysql"]::after {
     background: url("/devicon/icons/mysql/mysql-original.svg");
   }
+
   em[data-icon="photoshop"]::after {
     background: url("/devicon/icons/photoshop/photoshop-original.svg");
   }
+
+  // em[data-icon="photoshop"]::after {
+  //   background: url("/devicon/icons/photoshop/photoshop-plain.svg");
+  // }
+
   em[data-icon="vim"]::after {
     background: url("/devicon/icons/vim/vim-original.svg");
   }
+
   em[data-icon="atom"]::after {
     background: url("/devicon/icons/atom/atom-original.svg");
   }
+
   em[data-icon="vs"]::after {
     background: url("/devicon/icons/visualstudio/visualstudio-plain.svg");
   }
+
   em[data-icon="git"]::after {
     background: url("/devicon/icons/git/git-original.svg");
   }
+
   em[data-icon="kotlin"]::after {
     background: url("/devicon/icons/kotlin/kotlin-original.svg");
   }
+
   em[data-icon="sketch"]::after {
     background: url("/devicon/icons/sketch/sketch-original.svg");
   }
-  em[data-icon="photoshop"]::after {
-    background: url("/devicon/icons/photoshop/photoshop-plain.svg");
-  }
+
   em[data-icon="vuejs"]::after {
     background: url("/devicon/icons/vuejs/vuejs-original.svg");
   }
+
   em[data-icon="elm"]::after {
     background: url("/devicon/icons/elm/elm-original.svg");
   }
+
   em[data-icon="jest"]::after {
     background: url("/devicon/icons/jest/jest-plain.svg");
   }
+
   em[data-icon="graphql"]::after {
     background: url("/devicon/icons/graphql/graphql-plain.svg");
   }
+
   em[data-icon="windows"]::after {
     background: url("/devicon/icons/windows8/windows8-original.svg");
   }
+
   em[data-icon="heroku"]::after {
     background: url("/devicon/icons/heroku/heroku-original.svg");
   }
+
   em[data-icon="bootstrap"]::after {
     background: url("/devicon/icons/bootstrap/bootstrap-plain.svg");
   }
+
   em[data-icon="circleci"]::after {
     background: url("/devicon/icons/circleci/circleci-plain.svg");
   }
+
   em[data-icon="codeigniter"]::after {
     background: url("/devicon/icons/codeigniter/codeigniter-plain.svg");
   }
+
   em[data-icon="coffeescript"]::after {
     background: url("/devicon/icons/coffeescript/coffeescript-original.svg");
   }
+
   em[data-icon="drupal"]::after {
     background: url("/devicon/icons/drupal/drupal-plain.svg");
   }
+
   em[data-icon="express"]::after {
     background: url("/devicon/icons/express/express-original.svg");
   }
+
   em[data-icon="firebase"]::after {
     background: url("/devicon/icons/firebase/firebase-plain.svg");
   }
+
   em[data-icon="gatsby"]::after {
     background: url("/devicon/icons/gatsby/gatsby-plain.svg");
   }
+
   em[data-icon="github"]::after {
     background: url("/devicon/icons/github/github-original.svg");
   }
+
   em[data-icon="googlecloud"]::after {
     background: url("/devicon/icons/googlecloud/googlecloud-plain.svg");
   }
+
   em[data-icon="jquery"]::after {
     background: url("/devicon/icons/jquery/jquery-plain.svg");
   }
@@ -277,21 +339,27 @@ em[data-icon]::after {
   em[data-icon="kubernetes"]::after {
     background: url("/devicon/icons/kubernetes/kubernetes-plain.svg");
   }
+
   em[data-icon="mocha"]::after {
     background: url("/devicon/icons/mocha/mocha-plain.svg");
   }
+
   em[data-icon="mongodb"]::after {
     background: url("/devicon/icons/mongodb/mongodb-plain.svg");
   }
+
   em[data-icon="nextjs"]::after {
     background: url("/devicon/icons/nextjs/nextjs-original.svg");
   }
+
   em[data-icon="nginx"]::after {
     background: url("/devicon/icons/nginx/nginx-original.svg");
   }
+
   em[data-icon="tailwindcss"]::after {
     background: url("/devicon/icons/tailwindcss/tailwindcss-plain.svg");
   }
+
   em[data-icon="wordpress"]::after {
     background: url("/devicon/icons/wordpress/wordpress-plain.svg");
   }
@@ -301,5 +369,3 @@ em[data-icon]::after {
 //   --theme-font-sans: montserrat,serif;
 //   --theme-font-serif: taviraj,serif;
 // }
-
-@import "fonts"
