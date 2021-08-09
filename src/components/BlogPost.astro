@@ -15,17 +15,21 @@ const tagsStr = (await Promise.all(tags.map(tag => <a href={`/tag/${tag}`}>{tag}
     {heroImage && <img class="hero-image" loading="lazy" src={`/assets/${heroImage}`} />}
     <div class={`${!heroImage && 'md:mt-48 mt-20'}`}>
       <h1>{title}</h1>
-      <p><span class="mt-1 text-sm">By <strong>Johan Stenehall</strong> / <time datetime={dateIso(publishDate)}>{dateStr(publishDate)}</time></span>
+      <p><span class="mt-1 text-sm text-gray-400">- <time datetime={dateIso(publishDate)}>{dateStr(publishDate)}</time></span>
     </div>
   </header>
-  <main>
+  <main class="mt-8">
     <slot />
   </main>
   <footer>
     <div>
-      <p class="text-sm">This was filled under <a href={`/category/${category}`} class="" title={category}>{category}</a>
+      <p class="text-sm">Filled under <a href={`/category/${category}`} class="" title={category}>{category}</a>
       with some tags: {tagsStr}
       </p>
+    </div>
+    <div class="mt-2">
+      By <h3 class="mb-0 text-sm inline">Johan Stenehall</h3>
+      <p class="inline"> a developer working for Volvo Car Mobility coding their web.</p>
     </div>
   </footer>
 </article>
@@ -45,6 +49,10 @@ header div {
   @apply prose mx-16 mx-auto pt-12;
 }
 
+.article header h1 {
+  @apply mb-0;
+}
+
 article {
   @apply mx-8;
   overflow: hidden;
@@ -55,17 +63,20 @@ main {
 }
 
 footer {
-  @apply text-sm pb-12 flex flex-col items-center;
+  @apply pb-12 flex flex-col mx-auto max-w-prose;
+}
+
+footer::before, footer::after {
+  content: "";
+  @apply w-4/12 max-w-xs mx-auto block border-current;
 }
 
 footer::before {
-    content: "";
-    @apply w-4/12 max-w-xs mx-auto mb-12 block border-current border-t;
+  @apply border-t mb-12;
 }
 
-article::after {
-    content: "";
-    @apply w-4/12 max-w-xs mx-auto mb-8 block border-current border-b;
+footer::after {
+  @apply border-b mt-12;
 }
 
 @media (max-width: 50em) {
