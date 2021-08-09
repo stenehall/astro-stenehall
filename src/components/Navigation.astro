@@ -45,7 +45,7 @@ const menu = [
               </ol>
             </nav>
             <div>
-              <h2 class="mt-8 mb-2">A web developer</h2>
+              <h3 class="mt-8 mb-2">Johan Stenehall</h3>
               <p>
                 A web developer building things, currently for Volvo Car Mobility creating
                 their web. At work he mostly codes Vue, React and Elm but also some
@@ -92,11 +92,11 @@ const menu = [
   justify-content: center;
 }
 
-.main {
+.main, aside > div > div {
   width: calc(100vw - 4rem)
 }
 
-.main aside {
+aside {
   color: #fff;
   position: fixed;
   z-index: 5;
@@ -105,7 +105,7 @@ const menu = [
   clip-path: content-box circle(20px at calc(100% - 2rem) calc(3rem));
 }
 
-.main aside > div {
+aside > div {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(45deg, #30f0e0, #8840bb, #ee13a0, #f2ba10);
@@ -114,10 +114,10 @@ const menu = [
   top: 0;
 }
 
-.main aside > div > div {
+aside > div > div {
   margin: 0 auto;
   padding-bottom: 3rem;
-  @apply flex h-screen w-screen justify-between items-start flex-col-reverse;
+  @apply flex h-screen justify-between items-start flex-col-reverse;
 
   a {
     color: #fff;

@@ -26,6 +26,14 @@
     --section-stats-background: #ffb502;
     --section-stats-color: #000;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans;
+  }
   
   h1 {
     @apply text-5xl;
@@ -55,6 +63,7 @@
 
   html, body {
     background: #fff;
+    @apply font-serif;
   }
 
   a:hover {
@@ -218,9 +227,6 @@ em[data-icon]::after {
   }
   em[data-icon="sketch"]::after {
     background: url("/devicon/icons/sketch/sketch-original.svg");
-  }
-  em[data-icon="photoshop"]::after {
-    background: url("/devicon/icons/photoshop/photoshop-plain.svg");
   }
   em[data-icon="vuejs"]::after {
     background: url("/devicon/icons/vuejs/vuejs-original.svg");

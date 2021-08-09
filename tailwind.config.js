@@ -12,7 +12,7 @@ module.exports = {
       decimal: "decimal-leading-zero"
     },
     fontFamily: {
-      sans: ['Montserrat', 'sans-serif'],
+      sans: ['Hind', 'sans-serif'], // Montserrat
       serif: ['Taviraj', 'serif'],
     },
     extend: {

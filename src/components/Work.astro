@@ -40,7 +40,7 @@ const readableDate = (dateStr: string) => {
     <h3>
       {link ?
         <a href={link} title={title}>{ title }</a>:
-        title>
+        title
       }
         </h3>
     <slot />
@@ -87,7 +87,7 @@ img {
   height: 11px;
   width: 11px;
   content: "";
-  top: calc(1.5rem + 11px);
+  top: calc(1.5rem + 9px);
   position: absolute;
 }
 
@@ -107,7 +107,7 @@ img {
   }
 
   .date::after {
-    top: calc(3rem + 11px);
+    top: calc(3rem + 9px);
   }
 
   .even {
